@@ -8,37 +8,239 @@ import animationData from "../../../public/lottie.json";
 import Image from "next/image";
 import Bubble from "../bubble";
 
-
 gsap.registerPlugin(ScrollTrigger);
 
 const bubbles = [
   {
-    imageSrc: "/icons/MusicNotes.svg",
-    text: "Music?",
+    imageSrc: "/icons/Smiley.svg",
+    text: "Happiness",
     type: "left",
-    position: { top: "35%", left: "16%" },
+    position: { top: "35%", left: "10%" },
+    delay: 0.5,
+  },
+  {
+    imageSrc: "/icons/Sparkle.svg",
+    text: "Delight",
+    type: "right",
+    position: { top: "40%", right: "15%" },
     delay: 0.5,
   },
   {
     imageSrc: "/icons/Heart.svg",
-    text: "Life?",
+    text: "Love",
     type: "right",
-    position: { top: "50%", right: "18%" },
-    delay: 0.5,
-  },
-  {
-    imageSrc: "/icons/SmileySticker.svg",
-    text: "Emotional Growth?",
-    type: "right",
-    position: { top: "25%", right: "10%" },
+    position: { top: "80%", right: "25%" },
     delay: 0.75,
   },
   {
-    imageSrc: "/icons/FilmSlate.svg",
-    text: "Film?",
+    imageSrc: "/icons/HandHeart.svg",
+    text: "Tenderness",
     type: "left",
-    position: { top: "50%", left: "20%" },
+    position: { top: "90%", left: "15%" },
     delay: 1,
+  },
+  // 2
+  {
+    imageSrc: "/icons/SmileySad.svg",
+    text: "Sadness",
+    type: "left",
+    position: { top: "45%", left: "12%" },
+    delay: 2.25,
+  },
+  {
+    imageSrc: "/icons/Drop.svg",
+    text: "Melancholy",
+    type: "left",
+    position: { top: "80%", left: "18%" },
+    delay: 2.25,
+  },
+  {
+    imageSrc: "/icons/Cloud.svg",
+    text: "Nostalgia",
+    type: "right",
+    position: { top: "50%", right: "18%" },
+    delay: 2.5,
+  },
+  {
+    imageSrc: "/icons/PersonSimpleWalk.svg",
+    text: "Loneliness",
+    type: "right",
+    position: { top: "60%", right: "25%" },
+    delay: 2.75,
+  },
+  // 3
+  {
+    imageSrc: "/icons/SmileyNervous.svg",
+    text: "Anxiety",
+    type: "left",
+    position: { top: "29%", left: "19%" },
+    delay: 3.25,
+  },
+  {
+    imageSrc: "/icons/Ghost.svg",
+    text: "Fear",
+    type: "right",
+    position: { top: "30%", right: "20%" },
+    delay: 3.25,
+  },
+  {
+    imageSrc: "/icons/SmileyAngry.svg",
+    text: "Angry",
+    type: "right",
+    position: { top: "70%", right: "22%" },
+    delay: 3.5,
+  },
+  {
+    imageSrc: "/icons/SealQuestion.svg",
+    text: "Uncertainty",
+    type: "left",
+    position: { top: "70%", left: "20%" },
+    delay: 3.5,
+  },
+  // 4
+  {
+    imageSrc: "/icons/SmileyAngry.svg",
+    text: "Anger",
+    type: "left",
+    position: { top: "40%", left: "10%" },
+    delay: 4.25,
+  },
+  {
+    imageSrc: "/icons/UserMinus.svg",
+    text: "Intolerance",
+    type: "left",
+    position: { top: "95%", left: "20%" },
+    delay: 4.5,
+  },
+  {
+    imageSrc: "/icons/HandFist.svg",
+    text: "Aggression",
+    type: "right",
+    position: { top: "60%", right: "28%" },
+    delay: 4.75,
+  },
+  {
+    imageSrc: "/icons/SmileySad.svg",
+    text: "Disappointment",
+    type: "right",
+    position: { top: "45%", right: "18%" },
+    delay: 5.0,
+  },
+  // 5
+  {
+    imageSrc: "/icons/SmileyXEyes.svg",
+    text: "Guilt",
+    type: "right",
+    position: { top: "35%", right: "22%" },
+    delay: 5.25,
+  },
+  {
+    imageSrc: "/icons/Gavel.svg",
+    text: "Remorse",
+    type: "left",
+    position: { top: "40%", left: "10%" },
+    delay: 5.5,
+  },
+  {
+    imageSrc: "/icons/SmileyMelting.svg",
+    text: "Shame",
+    type: "left",
+    position: { top: "75%", left: "15%" },
+    delay: 5.75,
+  },
+  {
+    imageSrc: "/icons/WechatLogo.svg",
+    text: "Self-criticism",
+    type: "right",
+    position: { top: "60%", right: "25%" },
+    delay: 6.0,
+  },
+  // 6
+  {
+    imageSrc: "/icons/MaskHappy.svg",
+    text: "Relaxation",
+    type: "left",
+    position: { top: "30%", left: "10%" },
+    delay: 6.25,
+  },
+  {
+    imageSrc: "/icons/FlowerLotus.svg",
+    text: "Tranquility",
+    type: "right",
+    position: { top: "45%", right: "18%" },
+    delay: 6.5,
+  },
+  {
+    imageSrc: "/icons/FlowerLotus.svg",
+    text: "Tranquility",
+    type: "left",
+    position: { top: "65%", left: "5%" },
+    delay: 6.75,
+  },
+  {
+    imageSrc: "/icons/Clover.svg",
+    text: "Serenity",
+    type: "right",
+    position: { top: "65%", right: "22%" },
+    delay: 7.0,
+  },
+  // 7
+  {
+    imageSrc: "/icons/SmileyWink.svg",
+    text: "Excited",
+    type: "left",
+    position: { top: "24%", left: "8%" },
+    delay: 7.25,
+  },
+  {
+    imageSrc: "/icons/SmileyWink.svg",
+    text: "Interest",
+    type: "right",
+    position: { top: "40%", right: "18%" },
+    delay: 7.5,
+  },
+  {
+    imageSrc: "/icons/Lightning.svg",
+    text: "Energy",
+    type: "right",
+    position: { top: "76%", right: "14%" },
+    delay: 7.75,
+  },
+  {
+    imageSrc: "/icons/MagnifyingGlass.svg",
+    text: "Curiosity",
+    type: "left",
+    position: { top: "70%", left: "15%" },
+    delay: 8.0,
+  },
+  // 8
+  {
+    imageSrc: "/icons/SmileyMeh.svg",
+    text: "Boring",
+    type: "left",
+    position: { top: "25%", left: "10%" },
+    delay: 8.25,
+  },
+  {
+    imageSrc: "/icons/SmileyMeh.svg",
+    text: "Indifference",
+    type: "right",
+    position: { top: "40%", right: "12%" },
+    delay: 8.5,
+  },
+  {
+    imageSrc: "/icons/BatteryLow.svg",
+    text: "Apathy",
+    type: "left",
+    position: { top: "90%", left: "14%" },
+    delay: 8.75,
+  },
+  {
+    imageSrc: "/icons/SmileyNervous.svg",
+    text: "Despondency",
+    type: "right",
+    position: { top: "65%", right: "15%" },
+    delay: 9.0,
   },
 ];
 
@@ -46,8 +248,11 @@ const Hero = () => {
   const heroRef = useRef(null);
   const animationRef = useRef(null);
   const contentRef = useRef(null);
-  const textRef = useRef(null);
   const bubblesRef = useRef([]);
+  const lettersRef = useRef([]);
+
+  const gsapTitle = "The AI That Thinks Along Side Us All";
+  const words = gsapTitle.split(" ");
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -66,7 +271,7 @@ const Hero = () => {
 
       mainTimeline.fromTo(
         animationRef.current,
-        { scale: 2 },
+        { scale: 2.5 },
         { scale: 1.2, duration: 1 }
       );
 
@@ -77,58 +282,61 @@ const Hero = () => {
         "<"
       );
 
-      mainTimeline.to(
-        textRef.current,
+      mainTimeline.fromTo(
+        lettersRef.current,
+        { y: 0, color: "#000" },
         {
-          backgroundPosition: "100% 0%",
-          ease: "none",
-          duration: 1,
-          scrollTrigger: {
-            trigger: heroRef.current,
-            start: "80% center",
-            end: "bottom top",
-            scrub: true,
-          },
+          y: 20,
+          color: "#67aac9",
+          duration: 0.5,
+          stagger: 0.05,
         },
-        "-=0.5"
+        "+=0.3"
       );
 
-      const sortedDelayValues = [
-        ...new Set(bubbles.map((b) => b.delay)),
-      ].sort((a, b) => a - b);
+      const bubblesGroups = [];
+      for (let i = 0; i < bubbles.length; i += 4) {
+        bubblesGroups.push(bubbles.slice(i, i + 4));
+      }
 
       const bubblesTimeline = gsap.timeline({ repeat: -1 });
-      const stepBetweenGroups = 0.5;
+      const stepBetweenGroups = 2;
 
-      sortedDelayValues.forEach((delayValue, groupIndex) => {
-        const groupBubbles = bubbles.filter((b) => b.delay === delayValue);
+      bubblesGroups.forEach((group, groupIndex) => {
         const startTime = groupIndex * stepBetweenGroups;
 
-        groupBubbles.forEach((bubble) => {
+        group.forEach((bubble) => {
           const bubbleIndex = bubbles.indexOf(bubble);
+          const randomOffset = (Math.random() - 0.5) * 1.4;
           bubblesTimeline.fromTo(
             bubblesRef.current[bubbleIndex],
             { opacity: 0, scale: 0 },
-            { opacity: 1, scale: 1, duration: 0.75 },
-            startTime
+            {
+              opacity: 1,
+              scale: 1,
+              duration: 1.25,
+              ease: "back.out(1.7)",
+            },
+            startTime + randomOffset
           );
         });
 
-        groupBubbles.forEach((bubble) => {
+        group.forEach((bubble) => {
           const bubbleIndex = bubbles.indexOf(bubble);
           bubblesTimeline.to(
             bubblesRef.current[bubbleIndex],
-            { opacity: 0, scale: 0, duration: 0.75 },
-            startTime + 0.75
+            { opacity: 0, scale: 0, duration: 1.25, ease: "power2.in" },
+            startTime + 1.25
           );
         });
       });
 
-      mainTimeline.add(bubblesTimeline, "+=0.5");
+      mainTimeline.add(bubblesTimeline, "+=0.1");
     }, heroRef);
 
     return () => ctx.revert();
   }, []);
+  let letterCounter = 0;
 
   return (
     <div
@@ -150,14 +358,27 @@ const Hero = () => {
             CHAT NOW
           </Button>
         </div>
-        <h1
-          ref={textRef}
-          className="text-4xl uppercase font-bold mb-2 py-24"
-        >
-          The AI That Thinks Along Side Us All
+        <h1 className="gsap-title text-2xl md:text-4xl uppercase font-bold mb-2 py-24">
+          {words.map((word, wordIndex) => (
+            <React.Fragment key={wordIndex}>
+              {word.split("").map((letter, letterIndex) => {
+                const index = letterCounter++;
+                return (
+                  <span
+                    key={letterIndex}
+                    ref={(el) => (lettersRef.current[index] = el)}
+                    className="text-cblack-100"
+                  >
+                    {letter}
+                  </span>
+                );
+              })}
+              {" "}
+            </React.Fragment>
+          ))}
         </h1>
       </div>
-      <div className="absolute top-0 right-0 z-10 w-full h-[400px]">
+      <div className="md:absolute relative top-0 right-0 z-10 w-full h-[400px] mt-[10px]">
         {bubbles.map((bubble, index) => (
           <div
             key={index}

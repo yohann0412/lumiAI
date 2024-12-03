@@ -16,7 +16,7 @@ const tweets = [
   {
     id: "0987654321",
     content: "Another tweet to display in the list.",
-    url: "https://twitter.com/user/status/1234567890",
+    url: "https://twitter.com/user/status/0987654321",
     timestamp: "2024-12-02T08:30:00Z",
   },
 ];
@@ -59,7 +59,7 @@ const Conversations = () => {
   return (
     <div ref={containerRef}>
       <h2>Recent Tweets</h2>
-      <div className="px-12">
+      <div className="px-4 md:px-12">
         <div className="border-t-2 border-[#DEDEDE] w-full">
           {tweets.map((tweet) => (
             <Link
@@ -67,15 +67,19 @@ const Conversations = () => {
               key={tweet.id}
               target="_blank"
               rel="noopener noreferrer"
-              className="tweet-item group flex items-center justify-between border-b-2 border-[#DEDEDE] hover:border-cblack-100 transition-colors duration-300 cursor-pointer"
+              className="tweet-item group flex flex-col md:flex-row items-start md:items-center justify-start md:justify-between border-b-2 border-[#DEDEDE] hover:border-cblack-100 transition-colors duration-300 cursor-pointer"
             >
-              <div className="flex flex-col gap-2 w-full max-w-[15%] text-cblack-100 border-r-2 border-[#DEDEDE] items-start py-8 min-w-[200px]">
-                <p className="text-[20px]">{new Date(tweet.timestamp).toLocaleDateString()}</p>
-                <p className="text-[20px]">{new Date(tweet.timestamp).toLocaleTimeString()}</p>
+              <div className="flex flex-col gap-2 w-full md:max-w-[15%] text-cblack-100 md:border-r-2 border-[#DEDEDE] items-start py-4 md:py-8">
+                <p className="text-base md:text-[20px]">
+                  {new Date(tweet.timestamp).toLocaleDateString()}
+                </p>
+                <p className="text-base md:text-[20px]">
+                  {new Date(tweet.timestamp).toLocaleTimeString()}
+                </p>
               </div>
-              <div className="relative flex items-center gap-2 w-full text-cblack-100 pl-14">
-                <p className="text-2xl">{tweet.content}</p>
-                <span className="absolute right-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-cblack-100">
+              <div className="relative flex flex-col md:flex-row items-start md:items-center gap-2 w-full text-cblack-100 pl-0 md:pl-14">
+                <p className="text-base md:text-2xl">{tweet.content}</p>
+                <span className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-cblack-100">
                   →
                 </span>
               </div>

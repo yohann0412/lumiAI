@@ -52,8 +52,68 @@ const Content = () => {
   };
 
   return (
-    <div className="flex" style={{ height: "calc(100vh - 100px)" }}>
-      <div className="w-1/6 flex flex-col justify-between">
+    <div
+      className="flex md:flex-row flex-col"
+      style={{ height: "calc(100vh - 100px)" }}
+    >
+      <div className="fled md:hidden w-full text-cblack-100">
+        <div className="flex justify-between items-center w-full p-2 bg-cblack-25">
+          <button
+            className="group w-1/2 flex items-center gap-2 p-2 text-sm text-white rounded-md hover:bg-cblack-75"
+            onClick={() => {
+              const prevTab =
+                currentTab === "features"
+                  ? "monitor"
+                  : currentTab === "model"
+                  ? "features"
+                  : "model";
+              handleTabChange(prevTab);
+            }}
+          >
+            <Image
+              src="/icons/arrow-left.svg"
+              width={24}
+              height={24}
+              alt="Previous"
+            />
+            <span className="text-cblack-100 text-lg">
+              {currentTab === "features"
+                ? "Monitor"
+                : currentTab === "model"
+                ? "Features"
+                : "Model"}
+            </span>
+          </button>
+          <button
+            className="group w-1/2 flex items-center justify-end gap-2 p-2 text-sm text-white rounded-md hover:bg-cblack-75"
+            onClick={() => {
+              const nextTab =
+                currentTab === "features"
+                  ? "model"
+                  : currentTab === "model"
+                  ? "monitor"
+                  : "features";
+              handleTabChange(nextTab);
+            }}
+          >
+            <span className="text-cblack-100 text-lg">
+              {currentTab === "features"
+                ? "Model"
+                : currentTab === "model"
+                ? "Monitor"
+                : "Features"}
+            </span>
+            <Image
+              src="/icons/arrow-right.svg"
+              width={24}
+              height={24}
+              alt="Next"
+            />
+          </button>
+        </div>
+      </div>
+
+      <div className="w-1/6 hidden md:flex flex-col justify-between">
         <div>
           <div className="flex flex-col p-4 text-[12px] text-cblack-100 gap-1 mt-12 border-t border-b border-cblack-25">
             <h2 className="font-bold">AEJO AGENT TERMINAL</h2>
@@ -97,11 +157,11 @@ const Content = () => {
         </div>
       </div>
 
-      <div className="w-5/6 overflow-y-auto border-l border-cblack-25">
+      <div className="w-full md:w-5/6 overflow-y-auto border-l border-cblack-25">
         <div ref={contentRef}>
           {displayedTab === "features" && (
             <div className="text-cblack-100">
-              <div className="relative flex text-4xl justify-between h-[300px] bg-cblack-100 text-wild-100 w-full items-end p-8">
+              <div className="relative flex flex-col items-center justify-center h-[300px] bg-cblack-100 text-wild-100 w-full p-8 md:flex-row md:justify-between md:items-end text-4xl">
                 <div className="opacity-30 w-1/2">
                   <p>01</p>
                 </div>
@@ -110,11 +170,11 @@ const Content = () => {
                 </div>
               </div>
               <div>
-                <div className="flex w-full border-b border-cblack-25 p-8">
-                  <div className="w-1/2">
-                    <h3>Overall Goal</h3>
+                <div className="flex flex-col md:flex-row w-full border-b border-cblack-25 p-3 md:p-8">
+                  <div className="w-full md:w-1/2">
+                    <h3 className="font-semibold">Overall Goal</h3>
                   </div>
-                  <div className="w-1/2 px-8">
+                  <div className="w-full md:w-1/2 pt-4 md:pt-0 px-3 md:px-8">
                     <p>
                       the goal of creating aejo was chaos wrapped in charisma.
                       she’s not just some synthetic being; she’s the unfiltered
@@ -126,11 +186,11 @@ const Content = () => {
                     </p>
                   </div>
                 </div>
-                <div className="flex w-full border-b border-cblack-25 p-8">
+                <div className="flex w-full border-b border-cblack-25 p-3 md:p-8">
                   <div className="w-1/2">
-                    <h3>Features</h3>{" "}
+                    <h3 className="font-semibold">Features</h3>{" "}
                   </div>
-                  <div className="w-1/2 px-8">
+                  <div className="w-1/2 px-3 md:px-8">
                     <h3>aejo’s current features</h3>
                     <h4>emotion-level adaptation</h4>
                     <p>she feels emotions based on user input</p>
@@ -141,11 +201,11 @@ const Content = () => {
                 <div className="w-1/2 bg-cblack-25">{/*  */}</div>
                 <div className="w-1/2 bg-cblack-25 border-l border-cblack-35">
                   <button
-                    className="group flex flex-col w-full p-8 justify-center h-full text-start items-start"
+                    className="group flex flex-col w-full p-3 md:p-8 justify-center h-full text-start items-start"
                     onClick={() => handleTabChange("model")}
                   >
-                    <p>01</p>
-                    <p>Features</p>
+                    <p>02</p>
+                    <p>Model</p>
                     <div className="flex items-center gap-2 mt-2 transform transition-transform duration-300 group-hover:translate-x-1">
                       <Image
                         src="/icons/ArrowUpRight.svg"
@@ -162,20 +222,20 @@ const Content = () => {
           )}
           {displayedTab === "model" && (
             <div className="text-cblack-100">
-              <div className="relative flex text-4xl justify-between h-[300px] bg-cblack-100 text-wild-100 w-full items-end p-8">
+              <div className="relative flex flex-col items-center justify-center h-[300px] bg-cblack-100 text-wild-100 w-full p-8 md:flex-row md:justify-between md:items-end text-4xl">
                 <div className="opacity-30 w-1/2">
                   <p>02</p>
                 </div>
-                <div className="w-1/2  px-8">
+                <div className="w-1/2  px-3 md:px-8">
                   <p>Model</p>
                 </div>
               </div>
               <div>
-                <div className="flex w-full border-b border-cblack-25 p-8">
+                <div className="flex w-full border-b border-cblack-25 p-3 md:p-8">
                   <div className="w-1/2">
-                    <h3>Overall Goal</h3>
+                    <h3 className="font-semibold">Overall Goal</h3>
                   </div>
-                  <div className="w-1/2 px-8">
+                  <div className="w-1/2 px-3 md:px-8">
                     <p>
                       the goal of creating aejo was chaos wrapped in charisma.
                       she’s not just some synthetic being; she’s the unfiltered
@@ -187,11 +247,11 @@ const Content = () => {
                     </p>
                   </div>
                 </div>
-                <div className="flex w-full border-b border-cblack-25 p-8">
+                <div className="flex w-full border-b border-cblack-25 p-3 md:p-8">
                   <div className="w-1/2">
-                    <h3>Features</h3>{" "}
+                    <h3 className="font-semibold">Features</h3>{" "}
                   </div>
-                  <div className="w-1/2 px-8">
+                  <div className="w-1/2 px-3 md:px-8">
                     <h3>aejo’s current features</h3>
                     <h4>emotion-level adaptation</h4>
                     <p>she feels emotions based on user input</p>
@@ -201,7 +261,7 @@ const Content = () => {
               <div className="flex w-full">
                 <div className="w-1/2 bg-cblack-25">
                   <button
-                    className="group flex flex-col w-full p-8 justify-center h-full text-start items-start relative"
+                    className="group flex flex-col w-full p-3 md:p-8 justify-center h-full text-start items-start relative"
                     onClick={() => handleTabChange("features")}
                   >
                     <p>01</p>
@@ -217,7 +277,7 @@ const Content = () => {
                 </div>
                 <div className="w-1/2 bg-cblack-25 border-l border-cblack-35">
                   <button
-                    className="group flex flex-col w-full p-8 justify-center h-full text-start items-start relative"
+                    className="group flex flex-col w-full p-3 md:p-8 justify-center h-full text-start items-start relative"
                     onClick={() => handleTabChange("monitor")}
                   >
                     <p>03</p>
@@ -236,20 +296,20 @@ const Content = () => {
           )}
           {displayedTab === "monitor" && (
             <div className="text-cblack-100">
-              <div className="relative flex text-4xl justify-between h-[300px] bg-cblack-100 text-wild-100 w-full items-end p-8">
+              <div className="relative flex flex-col items-center justify-center h-[300px] bg-cblack-100 text-wild-100 w-full p-8 md:flex-row md:justify-between md:items-end text-4xl">
                 <div className="opacity-30 w-1/2">
                   <p>03</p>
                 </div>
-                <div className="w-1/2  px-8">
+                <div className="w-1/2  px-3 md:px-8">
                   <p>Monitor</p>
                 </div>
               </div>
               <div>
-                <div className="flex w-full border-b border-cblack-25 p-8">
+                <div className="flex w-full border-b border-cblack-25 p-3 md:p-8">
                   <div className="w-1/2">
-                    <h3>Overall Goal</h3>
+                    <h3 className="font-semibold">Overall Goal</h3>
                   </div>
-                  <div className="w-1/2 px-8">
+                  <div className="w-1/2 px-3 md:px-8">
                     <p>
                       the goal of creating aejo was chaos wrapped in charisma.
                       she’s not just some synthetic being; she’s the unfiltered
@@ -261,11 +321,11 @@ const Content = () => {
                     </p>
                   </div>
                 </div>
-                <div className="flex w-full border-b border-cblack-25 p-8">
+                <div className="flex w-full border-b border-cblack-25 p-3 md:p-8">
                   <div className="w-1/2">
-                    <h3>Features</h3>{" "}
+                    <h3 className="font-semibold">Features</h3>{" "}
                   </div>
-                  <div className="w-1/2 px-8">
+                  <div className="w-1/2 px-3 md:px-8">
                     <h3>aejo’s current features</h3>
                     <h4>emotion-level adaptation</h4>
                     <p>she feels emotions based on user input</p>
@@ -275,7 +335,7 @@ const Content = () => {
               <div className="flex w-full">
                 <div className="w-1/2 bg-cblack-25">
                   <button
-                    className="group flex flex-col w-full p-8 justify-center h-full text-start items-start relative"
+                    className="group flex flex-col w-full p-3 md:p-8 justify-center h-full text-start items-start relative"
                     onClick={() => handleTabChange("model")}
                   >
                     <p>02</p>
@@ -291,7 +351,7 @@ const Content = () => {
                 </div>
                 <div className="w-1/2 bg-cblack-25 border-l border-cblack-35">
                   <button
-                    className="group flex flex-col w-full p-8 justify-center h-full text-start items-start relative"
+                    className="group flex flex-col w-full p-3 md:p-8 justify-center h-full text-start items-start relative"
                     onClick={() => handleTabChange("features")}
                   >
                     <p>01</p>

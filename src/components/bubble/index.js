@@ -1,9 +1,9 @@
-
 const Bubble = ({ 
   imageSrc, 
   text, 
   type = "left", 
-  position = { top: "50%", left: "50%" } 
+  position = { top: "50%", left: "50%", width : "max-content" },
+  className = "",
 }) => {
   const tailStyle = type === "left" 
     ? "right-[-8px] top-1/2 -translate-y-1/2 border-y-[10px] border-y-transparent border-l-[10px] border-l-[#fff]"
@@ -11,7 +11,7 @@ const Bubble = ({
 
   return (
     <div
-      className="absolute flex items-center gap-2 px-4 py-2 bg-[#fff] text-cblack-100 rounded-lg shadow-md animate-float"
+      className={`absolute scale-50 md:scale-[1] flex flex-col md:flex-row  items-center gap-2 px-4 py-2 bg-[#fff]  text-cblack-100 rounded-lg shadow-md animate-float ${className}`}
       style={{ ...position }}
     >
       <img src={imageSrc} alt="Bubble Icon" className="w-6 h-6" />
