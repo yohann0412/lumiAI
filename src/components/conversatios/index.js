@@ -1,30 +1,37 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const tweets = [
-  {
-    id: "1234567890",
-    content: "This is a dynamically added tweet!",
-    url: "https://twitter.com/user/status/1234567890",
-    timestamp: "2024-12-01T12:00:00Z",
-  },
-  {
-    id: "0987654321",
-    content: "Another tweet to display in the list.",
-    url: "https://twitter.com/user/status/1234567890",
-    timestamp: "2024-12-02T08:30:00Z",
-  },
-];
-
 const Conversations = () => {
+  const [tweets, setTweets] = useState([]);
   const containerRef = useRef(null);
 
   useEffect(() => {
+    const loadTweets = async () => {
+      try {
+        const response = await fetch('/tweets.json');
+        const data = await response.json();
+        setTweets(data.tweets);
+      } catch (error) {
+        console.error('Error loading tweets:', error);
+        // Fallback to default tweets if loading fails
+        setTweets([
+          {
+            id: "1234567890",
+            content: "Error loading tweets",
+            url: "#",
+            timestamp: new Date().toISOString()
+          }
+        ]);
+      }
+    };
+
+    loadTweets();
+
     const ctx = gsap.context(() => {
       gsap.fromTo(
         containerRef.current,
