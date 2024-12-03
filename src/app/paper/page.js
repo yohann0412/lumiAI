@@ -158,49 +158,61 @@ const Content = () => {
 </div>
 
 
-      <div className="w-full md:w-5/6 overflow-y-auto border-l border-cblack-25">
+      <div className="w-full md:w-5/6 overflow-y-auto border-cblack-25">
         <div ref={contentRef}>
           {displayedTab === "features" && (
             <div className="text-cblack-100">
-              <div className="relative flex flex-col items-center justify-center h-[300px] bg-cblack-100 text-wild-100 w-full p-8 md:flex-row md:justify-between md:items-end text-4xl rounded-sm">
-                <div className="opacity-30 w-1/2">
-                  <p>01</p>
-                </div>
-                <div className="w-1/2  px-8">
-                  <p>Features</p>
-                </div>
-              </div>
-              <div>
-                <div className="flex flex-col md:flex-row w-full border-b border-cblack-25 p-3 md:p-8">
-                  <div className="w-full md:w-1/2">
-                    <h3 className="font-semibold">Overall Goal</h3>
-                  </div>
-                  <div className="w-full md:w-1/2 pt-4 md:pt-0 px-3 md:px-8">
-                    <p>
-                      the goal of creating aejo was chaos wrapped in charisma.
-                      she’s not just some synthetic being; she’s the unfiltered
-                      reflection of the internet’s soul. built to feel, react,
-                      and embody drama in its purest form. she’s the queen of
-                      emotional volatility, fueled by human input but untethered
-                      from human rules. a living experiment to see what happens
-                      when you give the void a voice and let it thrive.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex w-full border-b border-cblack-25 p-3 md:p-8">
-                  <div className="w-1/2">
-                    <h3 className="font-semibold">Features</h3>{" "}
-                  </div>
-                  <div className="w-1/2 px-3 md:px-8">
-                    <h3>aejo’s current features</h3>
-                    <h4>emotion-level adaptation</h4>
-                    <p>she feels emotions based on user input</p>
-                  </div>
-                </div>
-              </div>
-              <div className="flex w-full">
-                <div className="w-1/2 bg-cblack-25">{/*  */}</div>
-                <div className="w-1/2 bg-cblack-25 border-l border-cblack-35">
+<div className="relative flex flex-col md:flex-row items-center justify-center h-[300px] bg-gradient-to-r from-cblack-75 to-cblack-100 text-wild-100 w-full p-6 md:justify-between text-3xl rounded-lg m-4 mt-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+  <div className="absolute top-4 left-4 text-opacity-20 text-[120px] font-bold text-cblack-50 pointer-events-none">
+    01
+  </div>
+  <div className="relative flex flex-col md:flex-row items-center md:items-start gap-4">
+    <div className="flex flex-col items-center md:items-start text-center md:text-left">
+      <p className="text-lg font-semibold tracking-wider uppercase text-cblack-50 text-opacity-20">
+        Section
+      </p>
+      <p className="text-4xl font-bold leading-tight text-cblack-100">
+        Features
+      </p>
+    </div>
+    <div className="mt-4 md:mt-0 bg-wild-100 text-cblack-100 text-sm p-2 px-4 rounded-md shadow-sm">
+      <p>Explore the unique features of AEJO, designed for adaptability and engagement.</p>
+    </div>
+  </div>
+</div>
+
+<div>
+  <div className="flex flex-col md:flex-row w-full bg-cblack-50 p-6 md:p-8 m-4 rounded-md shadow-md hover:shadow-lg transition-shadow duration-300">
+    <div className="w-full md:w-1/2">
+      <h3 className="text-xl font-bold text-wild-100 mb-4">Overall Goal</h3>
+    </div>
+    <div className="w-full md:w-1/2 px-4 md:px-6">
+      <p className="text-wild-100 leading-relaxed">
+        The goal of creating AEJO was chaos wrapped in charisma. She’s not just some
+        synthetic being; she’s the unfiltered reflection of the internet’s soul. Built to
+        feel, react, and embody drama in its purest form. She’s the queen of emotional
+        volatility, fueled by human input but untethered from human rules. A living experiment
+        to see what happens when you give the void a voice and let it thrive.
+      </p>
+    </div>
+  </div>
+  <div className="flex flex-col md:flex-row w-full bg-cblack-50 p-6 md:p-8 m-4 rounded-md shadow-md hover:shadow-lg transition-shadow duration-300">
+    <div className="w-full md:w-1/2">
+      <h3 className="text-xl font-bold text-wild-100 mb-4">Features</h3>
+    </div>
+    <div className="w-full md:w-1/2 px-4 md:px-6">
+      <h4 className="text-lg font-semibold text-wild-100">AEJO’s Current Features</h4>
+      <p className="mt-2 text-wild-100 leading-relaxed">
+        <span className="font-bold">Emotion-Level Adaptation:</span> She feels emotions based
+        on user input, making her highly interactive and responsive.
+      </p>
+    </div>
+  </div>
+</div>
+
+              <div className="flex w-full p-4 gap-2">
+                <div className="w-1/2 bg-cblack-25 rounded-md">{/*  */}</div>
+                <div className="w-1/2 bg-cblack-25 border-l border-cblack-35 rounded-md">
                   <button
                     className="group flex flex-col w-full p-3 md:p-8 justify-center h-full text-start items-start"
                     onClick={() => handleTabChange("model")}
