@@ -113,7 +113,7 @@ const Content = () => {
         </div>
       </div>
 
-      <div className="w-1/6 hidden md:flex flex-col justify-between bg-cblack-25 rounded-md shadow-md m-2 p-1 pt-0 mt-0">
+      <div className="w-1/6 hidden md:flex flex-col justify-between bg-cblack-25 rounded-md shadow-md">
   <div>
     <div className="flex flex-col p-4 text-[12px] text-cblack-100 gap-1 mt-12 bg-white rounded-md shadow-sm">
       <h2 className="font-bold">AEJO AGENT TERMINAL</h2>
@@ -162,7 +162,7 @@ const Content = () => {
         <div ref={contentRef}>
           {displayedTab === "features" && (
             <div className="text-cblack-100">
-              <div className="relative flex flex-col items-center justify-center h-[300px] bg-cblack-100 text-wild-100 w-full p-8 md:flex-row md:justify-between md:items-end text-4xl rounded-sm">
+              <div className="relative flex flex-col items-center justify-center h-[300px] bg-cblack-100 text-wild-100 w-full p-8 md:flex-row md:justify-between md:items-end text-4xl">
                 <div className="opacity-30 w-1/2">
                   <p>01</p>
                 </div>

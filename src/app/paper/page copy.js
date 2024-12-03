@@ -113,56 +113,55 @@ const Content = () => {
         </div>
       </div>
 
-      <div className="w-1/6 hidden md:flex flex-col justify-between bg-cblack-25 rounded-md shadow-md m-2 p-1 pt-0 mt-0">
-  <div>
-    <div className="flex flex-col p-4 text-[12px] text-cblack-100 gap-1 mt-12 bg-white rounded-md shadow-sm">
-      <h2 className="font-bold">AEJO AGENT TERMINAL</h2>
-      <p className="opacity-50">UPDATED: nov 26, 2024</p>
-      <p className="opacity-50">v1.4</p>
-    </div>
+      <div className="w-1/6 hidden md:flex flex-col justify-between">
+        <div>
+          <div className="flex flex-col p-4 text-[12px] text-cblack-100 gap-1 mt-12 border-t border-b border-cblack-25">
+            <h2 className="font-bold">AEJO AGENT TERMINAL</h2>
+            <p className="opacity-50">UPDATED: nov 26, 2024</p>
+            <p className="opacity-50">v1.4</p>
+          </div>
 
-    <ul className="mt-4">
-      <li
-        onClick={() => handleTabChange("features")}
-        className={`flex cursor-pointer text-cblack-100 p-4 rounded-md hover:bg-cblack-25 gap-2 ${
-          currentTab === "features" ? "font-bold bg-cblack-25" : ""
-        }`}
-      >
-        <span className="opacity-30">01</span>
-        <p className="text-cblack-100">Features</p>
-      </li>
-      <li
-        onClick={() => handleTabChange("model")}
-        className={`flex cursor-pointer text-cblack-100 p-4 rounded-md hover:bg-cblack-25 gap-2 ${
-          currentTab === "model" ? "font-bold bg-cblack-25" : ""
-        }`}
-      >
-        <span className="opacity-30">02</span>
-        <p className="text-cblack-100">Model</p>
-      </li>
-      <li
-        onClick={() => handleTabChange("monitor")}
-        className={`flex cursor-pointer text-cblack-100 p-4 rounded-md hover:bg-cblack-25 gap-2 ${
-          currentTab === "monitor" ? "font-bold bg-cblack-25" : ""
-        }`}
-      >
-        <span className="opacity-30">03</span>
-        <p className="text-cblack-100">Monitor</p>
-      </li>
-    </ul>
-  </div>
+          <ul>
+            <li
+              onClick={() => handleTabChange("features")}
+              className={`flex cursor-pointer text-cblack-100 p-4 border-b border-cblack-25 gap-2 ${
+                currentTab === "features" ? "font-bold" : ""
+              }`}
+            >
+              <span className="opacity-30">01</span>
+              <p className="text-cblack-100">Features</p>
+            </li>
+            <li
+              onClick={() => handleTabChange("model")}
+              className={`flex cursor-pointer text-cblack-100 p-4 border-b border-cblack-25 gap-2 ${
+                currentTab === "model" ? "font-bold" : ""
+              }`}
+            >
+              <span className="opacity-30">02</span>
+              <p className="text-cblack-100">Model</p>
+            </li>
+            <li
+              onClick={() => handleTabChange("monitor")}
+              className={`flex cursor-pointer text-cblack-100 p-4 border-b border-cblack-25 gap-2 ${
+                currentTab === "monitor" ? "font-bold" : ""
+              }`}
+            >
+              <span className="opacity-30">03</span>
+              <p className="text-cblack-100">Monitor</p>
+            </li>
+          </ul>
+        </div>
 
-  <div className="text-black p-5 border-t border-cblack-25">
-    <CustomButton text="TWITTER" withIcon={true} href="/" />
-  </div>
-</div>
-
+        <div className="text-black p-5 border-t border-cblack-25">
+          <CustomButton text="TWITTER" withIcon={true} href="/" />
+        </div>
+      </div>
 
       <div className="w-full md:w-5/6 overflow-y-auto border-l border-cblack-25">
         <div ref={contentRef}>
           {displayedTab === "features" && (
             <div className="text-cblack-100">
-              <div className="relative flex flex-col items-center justify-center h-[300px] bg-cblack-100 text-wild-100 w-full p-8 md:flex-row md:justify-between md:items-end text-4xl rounded-sm">
+              <div className="relative flex flex-col items-center justify-center h-[300px] bg-cblack-100 text-wild-100 w-full p-8 md:flex-row md:justify-between md:items-end text-4xl">
                 <div className="opacity-30 w-1/2">
                   <p>01</p>
                 </div>

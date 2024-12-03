@@ -244,6 +244,7 @@ const bubbles = [
   },
 ];
 
+
 const Hero = () => {
   const heroRef = useRef(null);
   const animationRef = useRef(null);
@@ -251,13 +252,49 @@ const Hero = () => {
   const bubblesRef = useRef([]);
   const lettersRef = useRef([]);
 
-  const gsapTitle = "The AI That Thinks Along Side Us All";
-  const words = gsapTitle.split(" ");
+  const gsapTitle = [
+    "T",
+    "h",
+    "e",
+    " ",
+    "A",
+    "I",
+    " ",
+    "T",
+    "h",
+    "a",
+    "t",
+    " ",
+    "T",
+    "h",
+    "i",
+    "n",
+    "k",
+    "s",
+    " ",
+    "A",
+    "l",
+    "o",
+    "n",
+    "g",
+    " ",
+    "S",
+    "i",
+    "d",
+    "e",
+    " ",
+    "U",
+    "s",
+    " ",
+    "A",
+    "l",
+    "l",
+  ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       ScrollTrigger.refresh();
-
+  
       const mainTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: heroRef.current,
@@ -267,21 +304,31 @@ const Hero = () => {
           pinSpacing: true,
           markers: true,
         },
+        scrollTrigger: function (trigger) {
+          return {
+            trigger: trigger,
+            start: "top top",
+            end: "bottom+=100 top",
+            pin: true,
+            pinSpacing: true,
+            markers: true,
+          };
+        },
       });
-
+  
       mainTimeline.fromTo(
         animationRef.current,
         { scale: 2.5 },
         { scale: 1.2, duration: 1 }
       );
-
+  
       mainTimeline.fromTo(
         contentRef.current,
         { y: 200, opacity: 0 },
         { y: 0, opacity: 1, duration: 1 },
         "<"
       );
-
+  
       mainTimeline.fromTo(
         lettersRef.current,
         { y: 0, color: "#000" },
@@ -293,21 +340,21 @@ const Hero = () => {
         },
         "+=0.3"
       );
-
+  
       const bubblesGroups = [];
       for (let i = 0; i < bubbles.length; i += 4) {
         bubblesGroups.push(bubbles.slice(i, i + 4));
       }
-
+  
       const bubblesTimeline = gsap.timeline({ repeat: -1 });
-      const stepBetweenGroups = 2;
-
+      const stepBetweenGroups = 2; 
+  
       bubblesGroups.forEach((group, groupIndex) => {
         const startTime = groupIndex * stepBetweenGroups;
-
+  
         group.forEach((bubble) => {
           const bubbleIndex = bubbles.indexOf(bubble);
-          const randomOffset = (Math.random() - 0.5) * 1.4;
+          const randomOffset = (Math.random() - 0.5) * 1.4; //random
           bubblesTimeline.fromTo(
             bubblesRef.current[bubbleIndex],
             { opacity: 0, scale: 0 },
@@ -317,10 +364,11 @@ const Hero = () => {
               duration: 1.25,
               ease: "back.out(1.7)",
             },
-            startTime + randomOffset
+            startTime + randomOffset 
           );
         });
-
+        
+  
         group.forEach((bubble) => {
           const bubbleIndex = bubbles.indexOf(bubble);
           bubblesTimeline.to(
@@ -330,13 +378,13 @@ const Hero = () => {
           );
         });
       });
-
+  
       mainTimeline.add(bubblesTimeline, "+=0.1");
     }, heroRef);
-
+  
     return () => ctx.revert();
   }, []);
-  let letterCounter = 0;
+  
 
   return (
     <div
@@ -358,28 +406,21 @@ const Hero = () => {
             CHAT NOW
           </Button>
         </div>
-        <h1 className="gsap-title text-2xl md:text-4xl uppercase font-bold mb-2 py-24">
-          {words.map((word, wordIndex) => (
-            <React.Fragment key={wordIndex}>
-              {word.split("").map((letter, letterIndex) => {
-                const index = letterCounter++;
-                return (
-                  <span
-                    key={letterIndex}
-                    ref={(el) => (lettersRef.current[index] = el)}
-                    className="text-cblack-100"
-                  >
-                    {letter}
-                  </span>
-                );
-              })}
-              {" "}
-            </React.Fragment>
+        <h1 className="gsap-title text-4xl uppercase font-bold mb-2 py-24">
+          {gsapTitle.map((letter, index) => (
+            <span
+              key={index}
+              ref={(el) => (lettersRef.current[index] = el)}
+              className="inline-block text-cblack-100"
+              style={{ whiteSpace: "pre" }}
+            >
+              {letter}
+            </span>
           ))}
         </h1>
       </div>
-      <div className="md:absolute relative top-0 right-0 z-10 w-full h-[400px] mt-[10px]">
-        {bubbles.map((bubble, index) => (
+      <div className="absolute top-0 right-0 z-10 w-full h-[400px] mt-[10px]">
+      {bubbles.map((bubble, index) => (
           <div
             key={index}
             ref={(el) => (bubblesRef.current[index] = el)}
