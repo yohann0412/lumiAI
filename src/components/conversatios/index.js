@@ -1,37 +1,18 @@
+// /src/components/Conversations/index.js
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
+import tweetsData from '../../../tweets.json';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Conversations = () => {
-  const [tweets, setTweets] = useState([]);
+  const tweets = tweetsData.tweets;
   const containerRef = useRef(null);
 
   useEffect(() => {
-    const loadTweets = async () => {
-      try {
-        const response = await fetch('/tweets.json');
-        const data = await response.json();
-        setTweets(data.tweets);
-      } catch (error) {
-        console.error('Error loading tweets:', error);
-        // Fallback to default tweets if loading fails
-        setTweets([
-          {
-            id: "1234567890",
-            content: "Error loading tweets",
-            url: "#",
-            timestamp: new Date().toISOString()
-          }
-        ]);
-      }
-    };
-
-    loadTweets();
-
     const ctx = gsap.context(() => {
       gsap.fromTo(
         containerRef.current,
