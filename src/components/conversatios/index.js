@@ -3,9 +3,7 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
-
 gsap.registerPlugin(ScrollTrigger);
-
 const tweets = [
   {
     id: "1234567890",
@@ -20,10 +18,8 @@ const tweets = [
     timestamp: "2024-12-02T08:30:00Z",
   },
 ];
-
 const Conversations = () => {
   const containerRef = useRef(null);
-
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
@@ -52,10 +48,8 @@ const Conversations = () => {
         }
       );
     }, containerRef);
-
     return () => ctx.revert();
   }, []);
-
   return (
     <div ref={containerRef}>
       <h2>Recent Tweets</h2>
@@ -90,5 +84,4 @@ const Conversations = () => {
     </div>
   );
 };
-
 export default Conversations;
