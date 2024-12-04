@@ -43,6 +43,15 @@ body {
   /* font-family: var(--font-space-grotesk), Arial, Helvetica, sans-serif; */
 }
 
+
+body {
+  background-color: #fff;
+  background-image: radial-gradient(circle, #c2c2c2 4px, transparent 4px);
+  background-size: 20px 20px;
+}
+
+
+
 .font-helvetica {
   font-family: 'Helvetica Neue', Arial, sans-serif;
 }
