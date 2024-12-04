@@ -8,7 +8,7 @@ const Header = () => {
       <div className="w-full flex justify-between items-center">
         <h1 className="text-2xl font-bold text-primary-foreground">
           <Link href="/" className="text-cblack-100">
-            lum.
+            Lumi.
             <span className="gradient-text">AI</span>
           </Link>
         </h1>

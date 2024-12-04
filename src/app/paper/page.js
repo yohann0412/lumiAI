@@ -114,101 +114,114 @@ const Content = () => {
       </div>
 
       <div className="w-1/6 hidden md:flex flex-col justify-between bg-cblack-25 rounded-md shadow-md m-2 p-1 pt-0 mt-0">
-  <div>
-    <div className="flex flex-col p-4 text-[12px] text-cblack-100 gap-1 mt-12 bg-white rounded-md shadow-sm">
-      <h2 className="font-bold">AEJO AGENT TERMINAL</h2>
-      <p className="opacity-50">UPDATED: nov 26, 2024</p>
-      <p className="opacity-50">v1.4</p>
-    </div>
+        <div>
+          <div className="flex flex-col p-4 text-[12px] text-cblack-100 gap-1 mt-12 bg-white rounded-md shadow-sm">
+            <h2 className="font-bold">AEJO AGENT TERMINAL</h2>
+            <p className="opacity-50">UPDATED: nov 26, 2024</p>
+            <p className="opacity-50">v1.4</p>
+          </div>
 
-    <ul className="mt-4">
-      <li
-        onClick={() => handleTabChange("features")}
-        className={`flex cursor-pointer text-cblack-100 p-4 rounded-md hover:bg-cblack-25 gap-2 ${
-          currentTab === "features" ? "font-bold bg-cblack-25" : ""
-        }`}
-      >
-        <span className="opacity-30">01</span>
-        <p className="text-cblack-100">Features</p>
-      </li>
-      <li
-        onClick={() => handleTabChange("model")}
-        className={`flex cursor-pointer text-cblack-100 p-4 rounded-md hover:bg-cblack-25 gap-2 ${
-          currentTab === "model" ? "font-bold bg-cblack-25" : ""
-        }`}
-      >
-        <span className="opacity-30">02</span>
-        <p className="text-cblack-100">Model</p>
-      </li>
-      <li
-        onClick={() => handleTabChange("monitor")}
-        className={`flex cursor-pointer text-cblack-100 p-4 rounded-md hover:bg-cblack-25 gap-2 ${
-          currentTab === "monitor" ? "font-bold bg-cblack-25" : ""
-        }`}
-      >
-        <span className="opacity-30">03</span>
-        <p className="text-cblack-100">Monitor</p>
-      </li>
-    </ul>
-  </div>
+          <ul className="mt-4">
+            <li
+              onClick={() => handleTabChange("features")}
+              className={`flex cursor-pointer text-cblack-100 p-4 rounded-md hover:bg-cblack-25 gap-2 ${
+                currentTab === "features" ? "font-bold bg-cblack-25" : ""
+              }`}
+            >
+              <span className="opacity-30">01</span>
+              <p className="text-cblack-100">Features</p>
+            </li>
+            <li
+              onClick={() => handleTabChange("model")}
+              className={`flex cursor-pointer text-cblack-100 p-4 rounded-md hover:bg-cblack-25 gap-2 ${
+                currentTab === "model" ? "font-bold bg-cblack-25" : ""
+              }`}
+            >
+              <span className="opacity-30">02</span>
+              <p className="text-cblack-100">Model</p>
+            </li>
+            <li
+              onClick={() => handleTabChange("monitor")}
+              className={`flex cursor-pointer text-cblack-100 p-4 rounded-md hover:bg-cblack-25 gap-2 ${
+                currentTab === "monitor" ? "font-bold bg-cblack-25" : ""
+              }`}
+            >
+              <span className="opacity-30">03</span>
+              <p className="text-cblack-100">Monitor</p>
+            </li>
+          </ul>
+        </div>
 
-  <div className="text-black p-5 border-t border-cblack-25">
-    <CustomButton text="TWITTER" withIcon={true} href="/" />
-  </div>
-</div>
-
+        <div className="text-black p-5 border-t border-cblack-25">
+          <CustomButton text="TWITTER" withIcon={true} href="/" />
+        </div>
+      </div>
 
       <div className="w-full md:w-5/6 overflow-y-auto border-cblack-25">
         <div ref={contentRef}>
           {displayedTab === "features" && (
             <div className="text-cblack-100">
-<div className="relative flex flex-col md:flex-row items-center justify-center h-[300px] bg-gradient-to-r from-cblack-75 to-cblack-100 text-wild-100 w-full p-6 md:justify-between text-3xl rounded-lg m-4 mt-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-  <div className="absolute top-4 left-4 text-opacity-20 text-[120px] font-bold text-cblack-50 pointer-events-none">
-    01
-  </div>
-  <div className="relative flex flex-col md:flex-row items-center md:items-start gap-4">
-    <div className="flex flex-col items-center md:items-start text-center md:text-left">
-      <p className="text-lg font-semibold tracking-wider uppercase text-cblack-50 text-opacity-20">
-        Section
-      </p>
-      <p className="text-4xl font-bold leading-tight text-cblack-100">
-        Features
-      </p>
-    </div>
-    <div className="mt-4 md:mt-0 bg-wild-100 text-cblack-100 text-sm p-2 px-4 rounded-md shadow-sm">
-      <p>Explore the unique features of AEJO, designed for adaptability and engagement.</p>
-    </div>
-  </div>
-</div>
+              <div className="relative flex flex-col md:flex-row items-center justify-center h-[300px] bg-gradient-to-r from-cblack-75 to-cblack-100 text-wild-100 w-full p-6 md:justify-between text-3xl rounded-lg m-4 mt-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="absolute top-4 left-4 text-opacity-20 text-[120px] font-bold text-cblack-50 pointer-events-none">
+                  01
+                </div>
+                <div className="relative flex flex-col md:flex-row items-center md:items-start gap-4">
+                  <div className="flex flex-col items-center md:items-start text-center md:text-left">
+                    <p className="text-lg font-semibold tracking-wider uppercase text-cblack-50 text-opacity-20">
+                      Section
+                    </p>
+                    <p className="text-4xl font-bold leading-tight text-cblack-100">
+                      Features
+                    </p>
+                  </div>
+                  <div className="mt-4 md:mt-0 bg-wild-100 text-cblack-100 text-sm p-2 px-4 rounded-md shadow-sm">
+                    <p>
+                      Explore the unique features of AEJO, designed for
+                      adaptability and engagement.
+                    </p>
+                  </div>
+                </div>
+              </div>
 
-<div>
-  <div className="flex flex-col md:flex-row w-full bg-cblack-50 p-6 md:p-8 m-4 rounded-md shadow-md hover:shadow-lg transition-shadow duration-300">
-    <div className="w-full md:w-1/2">
-      <h3 className="text-xl font-bold text-wild-100 mb-4">Overall Goal</h3>
-    </div>
-    <div className="w-full md:w-1/2 px-4 md:px-6">
-      <p className="text-wild-100 leading-relaxed">
-        The goal of creating AEJO was chaos wrapped in charisma. She’s not just some
-        synthetic being; she’s the unfiltered reflection of the internet’s soul. Built to
-        feel, react, and embody drama in its purest form. She’s the queen of emotional
-        volatility, fueled by human input but untethered from human rules. A living experiment
-        to see what happens when you give the void a voice and let it thrive.
-      </p>
-    </div>
-  </div>
-  <div className="flex flex-col md:flex-row w-full bg-cblack-50 p-6 md:p-8 m-4 rounded-md shadow-md hover:shadow-lg transition-shadow duration-300">
-    <div className="w-full md:w-1/2">
-      <h3 className="text-xl font-bold text-wild-100 mb-4">Features</h3>
-    </div>
-    <div className="w-full md:w-1/2 px-4 md:px-6">
-      <h4 className="text-lg font-semibold text-wild-100">AEJO’s Current Features</h4>
-      <p className="mt-2 text-wild-100 leading-relaxed">
-        <span className="font-bold">Emotion-Level Adaptation:</span> She feels emotions based
-        on user input, making her highly interactive and responsive.
-      </p>
-    </div>
-  </div>
-</div>
+              <div>
+                <div className="flex flex-col md:flex-row w-full bg-cblack-50 p-6 md:p-8 m-4 rounded-md shadow-md hover:shadow-lg transition-shadow duration-300">
+                  <div className="w-full md:w-1/2">
+                    <h3 className="text-xl font-bold text-wild-100 mb-4">
+                      Overall Goal
+                    </h3>
+                  </div>
+                  <div className="w-full md:w-1/2 px-4 md:px-6">
+                    <p className="text-wild-100 leading-relaxed">
+                      The goal of creating AEJO was chaos wrapped in charisma.
+                      She’s not just some synthetic being; she’s the unfiltered
+                      reflection of the internet’s soul. Built to feel, react,
+                      and embody drama in its purest form. She’s the queen of
+                      emotional volatility, fueled by human input but untethered
+                      from human rules. A living experiment to see what happens
+                      when you give the void a voice and let it thrive.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex flex-col md:flex-row w-full bg-cblack-50 p-6 md:p-8 m-4 rounded-md shadow-md hover:shadow-lg transition-shadow duration-300">
+                  <div className="w-full md:w-1/2">
+                    <h3 className="text-xl font-bold text-wild-100 mb-4">
+                      Features
+                    </h3>
+                  </div>
+                  <div className="w-full md:w-1/2 px-4 md:px-6">
+                    <h4 className="text-lg font-semibold text-wild-100">
+                      AEJO’s Current Features
+                    </h4>
+                    <p className="mt-2 text-wild-100 leading-relaxed">
+                      <span className="font-bold">
+                        Emotion-Level Adaptation:
+                      </span>{" "}
+                      She feels emotions based on user input, making her highly
+                      interactive and responsive.
+                    </p>
+                  </div>
+                </div>
+              </div>
 
               <div className="flex w-full p-4 gap-2">
                 <div className="w-1/2 bg-cblack-25 rounded-md">{/*  */}</div>
