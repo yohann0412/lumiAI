@@ -30,20 +30,6 @@ const Diagram = () => {
         guilty: 1,
       },
     },
-    {
-      id: 2,
-      emotions: {
-        sad: 5,
-        happy: 2,
-        surprised: 1,
-        angry: 4,
-        calm: 3,
-        afraid: 2,
-        disgusted: 2,
-        curious: 4,
-        guilty: 2,
-      },
-    },
   ];
 
   const [selectedSetIndex, setSelectedSetIndex] = useState(0);
@@ -85,7 +71,7 @@ const Diagram = () => {
 
   const textPositions = emotionKeys.map((emotion, index) => {
     const angle = (index / emotionKeys.length) * 360;
-    const { x, y } = getCoordinates(angle, 6); // Выносим текст за пределы фигуры
+    const { x, y } = getCoordinates(angle, 6); 
     return { emotion, x, y };
   });
 
@@ -134,9 +120,12 @@ const Diagram = () => {
 
   return (
     <div className="flex flex-col items-center justify-center bg-gray-100 w-full h-full relative py-10">
-      <h1 className="text-xl font-bold mb-4" style={{ color: color }}>
-        {`Mood Level: ${moodLevel}`}
-      </h1>
+<h1
+  className="text-xl font-bold mb-4"
+  style={{ color: color }}
+>
+  {`Mood Level: ${moodLevel}`}
+</h1>
 
       <select
         value={selectedSetIndex}

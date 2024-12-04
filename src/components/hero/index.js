@@ -385,7 +385,7 @@ const Hero = () => {
     <div className="min-h-screen">
       <div
         ref={firstFrameRef}
-        className="z-10 relative flex flex-col items-center justify-center text-center text-black min-h-screen "
+        className="z-10 relative flex flex-col items-center justify-center text-center text-black min-h-screen overflow-hidden "
       >
         <div className="box w-full bg-white mt-4">
           <Lottie animationData={animationData} loop={true} />
