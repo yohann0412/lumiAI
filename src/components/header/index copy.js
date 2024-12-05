@@ -11,35 +11,10 @@ const Header = () => {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-
-    const header = headerFrame.current;
-
-    // Начальная анимация, чтобы скрыть хедер
-    gsap.set(header, { y: "-100%", opacity: 0 });
-
-    // Анимация при прокрутке
-    ScrollTrigger.create({
-      start: "top -50", // Хедер появится, когда прокрутка будет на -50px
-      end: "top top", // Остается в верхней части страницы
-      onEnter: () => {
-        gsap.to(header, { y: "0%", opacity: 1, duration: 0.5, ease: "power1.out" });
-      },
-      onLeaveBack: () => {
-        gsap.to(header, { y: "-100%", opacity: 0, duration: 0.5, ease: "power1.out" });
-      },
-    });
-
-    // Убираем анимацию при размонтировании
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
   }, []);
 
   return (
-    <header
-      ref={headerFrame}
-      className="text-black bg-wild-100 px-4 md:px-14 py-6 fixed top-0 left-0 w-full z-50 shadow-md"
-    >
+    <header ref={headerFrame} className="text-black bg-wild-100 px-4 md:px-14 py-6 sticky top-0 z-50">
       <div className="w-full flex justify-between items-center">
         <h1 className="text-2xl font-bold text-primary-foreground">
           <Link href="/" className="text-cblack-100">

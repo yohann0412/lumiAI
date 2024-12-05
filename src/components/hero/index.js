@@ -337,7 +337,7 @@ const Hero = () => {
           .to(firstFrameRef.current, { duration: 1 })
           .fromTo(
             firstFrameRef.current.querySelector(".box"),
-            { scale: 3 },
+            { scale: 2.6 },
             { scale: 1, duration: 2 },
             "-=0.5"
           )

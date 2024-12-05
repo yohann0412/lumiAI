@@ -1,7 +1,7 @@
 {
-  "Happy": 51, 
-  "Sad": 30, 
-  "Excited": 39, 
+  "Happy": 51,
+  "Sad": 30,
+  "Excited": 39,
   "Angry": 11,
   "Bored": 29,
   "Anxious": 48,
@@ -12,9 +12,9 @@
   "Hopeful": 31,
   "Lonely": 78,
   "Nostalgic": 31,
-  "Peaceful": 60, 
+  "Peaceful": 60,
   "Proud": 89,
   "Scared": 72,
   "Stressed": 49,
-  "Surprised": 6}
-
+  "Surprised": 6
+}
