@@ -426,104 +426,112 @@ const Hero = () => {
         });
 
         timelineMobile
-          .to(mobileFrameRef.current, { duration: 1 })
+          .to(firstFrameRef.current, { duration: 1 })
           .fromTo(
-            mobileFrameRef.current.querySelector(".mobilebox"),
+            firstFrameRef.current.querySelector(".mobilebox"),
             { scale: 3 },
-            { scale: 1, duration: 2 }
-          );
-        // timelineMobile.to(mobileFrameRef.current, { duration: 1 }).fromTo(
-        //   mobileFrameRef.current.querySelector(".box"),
-        //   { scale: 3, backgroundColor: "green" }, // Начальное состояние
-        //   { scale: 1, backgroundColor: "red", duration: 2 }, // Конечное состояние
-        //   "-=0.5"
-        // );
+            { scale: 1, duration: 2 },
+            "-=0.5"
+          )
+          // .fromTo(
+          //   firstFrameRef.current.querySelector(".bubbles"),
+          //   { opacity: 0, y: 50 },
+          //   { opacity: 1, y: 0, duration: 1 },
+          //   "+=0.5"
+          // )
+          // .fromTo(
+          //   firstFrameRef.current.querySelector(".call-title"),
+          //   { opacity: 0, y: 50 },
+          //   { opacity: 1, y: 0, duration: 1 },
+          //   "+=0.5"
+          // )
+          // .fromTo(
+          //   lettersRef.current,
+          //   { y: 0, color: "#000" },
+          //   {
+          //     y: 20,
+          //     color: "#67aac9",
+          //     duration: 0.5,
+          //     stagger: 0.05,
+          //   },
+          //   "+=0.3"
+          // )
+          // .fromTo(
+          //   firstFrameRef.current.querySelector(".action-button"),
+          //   { opacity: 0, y: 50 },
+          //   { opacity: 1, y: 0, duration: 1 },
+          //   "+=0.5"
+          // );
 
-        //     .fromTo(
-        //       firstFrameRef.current.querySelector(".bubbles"),
-        //       { opacity: 0, y: 50 },
-        //       { opacity: 1, y: 0, duration: 1 },
-        //       "+=0.5"
-        //     )
-        //     .fromTo(
-        //       firstFrameRef.current.querySelector(".call-title"),
-        //       { opacity: 0, y: 50 },
-        //       { opacity: 1, y: 0, duration: 1 },
-        //       "+=0.5"
-        //     )
-        //     .fromTo(
-        //       lettersRef.current,
-        //       { y: 0, color: "#000" },
+        // const bubblesGroups = [];
+        // for (let i = 0; i < bubbles.length; i += 4) {
+        //   bubblesGroups.push(bubbles.slice(i, i + 4));
+        // }
+
+        // const bubblesTimeline = gsap.timeline({ repeat: -1 });
+        // const stepBetweenGroups = 4;
+
+        // bubblesGroups.forEach((group, groupIndex) => {
+        //   const groupStartTime = groupIndex * stepBetweenGroups;
+
+        //   group.forEach((bubble) => {
+        //     const bubbleIndex = bubbles.indexOf(bubble);
+        //     const randomOffset = (Math.random() - 0.5) * 0.8;
+        //     const bubbleStartTime = groupStartTime + randomOffset;
+
+        //     bubblesTimeline.fromTo(
+        //       bubblesRef.current[bubbleIndex],
+        //       { opacity: 0, scale: 0 },
         //       {
-        //         y: 20,
-        //         color: "#67aac9",
-        //         duration: 0.5,
-        //         stagger: 0.05,
+        //         opacity: 1,
+        //         scale: 1,
+        //         duration: 1.25,
+        //         ease: "back.out(1.7)",
         //       },
-        //       "+=0.3"
-        //     )
-        //     .fromTo(
-        //       firstFrameRef.current.querySelector(".action-button"),
-        //       { opacity: 0, y: 50 },
-        //       { opacity: 1, y: 0, duration: 1 },
-        //       "+=0.5"
+        //       bubbleStartTime
         //     );
 
-        //   const bubblesGroups = [];
-        //   for (let i = 0; i < bubbles.length; i += 4) {
-        //     bubblesGroups.push(bubbles.slice(i, i + 4));
-        //   }
-
-        //   const bubblesTimeline = gsap.timeline({ repeat: -1 });
-        //   const stepBetweenGroups = 4;
-
-        //   bubblesGroups.forEach((group, groupIndex) => {
-        //     const groupStartTime = groupIndex * stepBetweenGroups;
-
-        //     group.forEach((bubble) => {
-        //       const bubbleIndex = bubbles.indexOf(bubble);
-        //       const randomOffset = (Math.random() - 0.5) * 0.8;
-        //       const bubbleStartTime = groupStartTime + randomOffset;
-
-        //       bubblesTimeline.fromTo(
-        //         bubblesRef.current[bubbleIndex],
-        //         { opacity: 0, scale: 0 },
-        //         {
-        //           opacity: 1,
-        //           scale: 1,
-        //           duration: 1.25,
-        //           ease: "back.out(1.7)",
-        //         },
-        //         bubbleStartTime
-        //       );
-
-        //       bubblesTimeline.to(
-        //         bubblesRef.current[bubbleIndex],
-        //         { opacity: 0, scale: 0, duration: 1.25, ease: "power2.in" },
-        //         bubbleStartTime + 1.25
-        //       );
-        //     });
-        //   });
+            // bubblesTimeline.to(
+            //   bubblesRef.current[bubbleIndex],
+            //   { opacity: 0, scale: 0, duration: 1.25, ease: "power2.in" },
+            //   bubbleStartTime + 1.25
+            // );
+          // });
+        // });
       });
 
       return () => ctx.revert();
     }
+
   }, [Lottie, isMobile]);
 
   if (!Lottie) {
     return <div className="min-h-screen w-full ">Loading...</div>;
   }
 
+  // if (isMobile) {
+  //   return (
+  //     <div ref={mobileFrameRef} className="w-full h-screen">
+  //       <h1 className="text-cblack-100 text-4xl">hello mobile</h1>
+  //       <div className="mobilebox w-full bg-white">
+  //         <Lottie animationData={animationData} loop={true} />
+  //       </div>
+  //     </div>
+  //   );
+  // }
   if (isMobile) {
     return (
-      <div ref={mobileFrameRef} className=" w-full h-screen pt-28">
+      <div ref={mobileFrameRef} className="w-full h-screen">
         <h1 className="text-cblack-100 text-4xl">hello mobile</h1>
-        <div className="mobilebox">
-          <Lottie animationData={animationData} loop={true} />
+        <div className="mobilebox w-full bg-white">
+          {Lottie && animationData && (
+            <Lottie animationData={animationData} loop={true} />
+          )}
         </div>
       </div>
     );
   }
+  
 
   return (
     <div className="min-h-screen">

@@ -70,10 +70,10 @@ const Conversations = () => {
   }, [tweets]);
 
   return (
-    <div ref={containerRef}>
+    <div ref={containerRef} className="w-full h-[600px] bg-wild-100 overflow-scroll">
       <h2>Recent Tweets</h2>
       <div className="px-4 md:px-12">
-        <div className="border-t-2 border-[#DEDEDE] w-full">
+        <div className="border-t-2 border-[#DEDEDE] w-full ">
           {tweets.map((tweet) => (
             <Link
               href={tweet.url}
