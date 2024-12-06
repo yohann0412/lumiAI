@@ -329,7 +329,7 @@ const Hero = () => {
             end: "bottom+=100 top",
             scrub: true,
             pin: true,
-            markers: true,
+            markers: false,
           },
         });
 
@@ -421,7 +421,7 @@ const Hero = () => {
             end: "bottom+=100 top",
             scrub: true,
             pin: true,
-            markers: true,
+            markers: false,
           },
         });
 
@@ -431,79 +431,13 @@ const Hero = () => {
             mobileFrameRef.current.querySelector(".mobilebox"),
             { scale: 3 },
             { scale: 1, duration: 2 }
+          )
+          .fromTo(
+            mobileFrameRef.current.querySelector(".mobile-title"),
+            { opacity: 1, y: 50, },
+            { opacity: 0, y: 0, duration: 1 },
+            "+=0.5"
           );
-        // timelineMobile.to(mobileFrameRef.current, { duration: 1 }).fromTo(
-        //   mobileFrameRef.current.querySelector(".box"),
-        //   { scale: 3, backgroundColor: "green" }, // Начальное состояние
-        //   { scale: 1, backgroundColor: "red", duration: 2 }, // Конечное состояние
-        //   "-=0.5"
-        // );
-
-        //     .fromTo(
-        //       firstFrameRef.current.querySelector(".bubbles"),
-        //       { opacity: 0, y: 50 },
-        //       { opacity: 1, y: 0, duration: 1 },
-        //       "+=0.5"
-        //     )
-        //     .fromTo(
-        //       firstFrameRef.current.querySelector(".call-title"),
-        //       { opacity: 0, y: 50 },
-        //       { opacity: 1, y: 0, duration: 1 },
-        //       "+=0.5"
-        //     )
-        //     .fromTo(
-        //       lettersRef.current,
-        //       { y: 0, color: "#000" },
-        //       {
-        //         y: 20,
-        //         color: "#67aac9",
-        //         duration: 0.5,
-        //         stagger: 0.05,
-        //       },
-        //       "+=0.3"
-        //     )
-        //     .fromTo(
-        //       firstFrameRef.current.querySelector(".action-button"),
-        //       { opacity: 0, y: 50 },
-        //       { opacity: 1, y: 0, duration: 1 },
-        //       "+=0.5"
-        //     );
-
-        //   const bubblesGroups = [];
-        //   for (let i = 0; i < bubbles.length; i += 4) {
-        //     bubblesGroups.push(bubbles.slice(i, i + 4));
-        //   }
-
-        //   const bubblesTimeline = gsap.timeline({ repeat: -1 });
-        //   const stepBetweenGroups = 4;
-
-        //   bubblesGroups.forEach((group, groupIndex) => {
-        //     const groupStartTime = groupIndex * stepBetweenGroups;
-
-        //     group.forEach((bubble) => {
-        //       const bubbleIndex = bubbles.indexOf(bubble);
-        //       const randomOffset = (Math.random() - 0.5) * 0.8;
-        //       const bubbleStartTime = groupStartTime + randomOffset;
-
-        //       bubblesTimeline.fromTo(
-        //         bubblesRef.current[bubbleIndex],
-        //         { opacity: 0, scale: 0 },
-        //         {
-        //           opacity: 1,
-        //           scale: 1,
-        //           duration: 1.25,
-        //           ease: "back.out(1.7)",
-        //         },
-        //         bubbleStartTime
-        //       );
-
-        //       bubblesTimeline.to(
-        //         bubblesRef.current[bubbleIndex],
-        //         { opacity: 0, scale: 0, duration: 1.25, ease: "power2.in" },
-        //         bubbleStartTime + 1.25
-        //       );
-        //     });
-        //   });
       });
 
       return () => ctx.revert();
@@ -517,9 +451,13 @@ const Hero = () => {
   if (isMobile) {
     return (
       <div ref={mobileFrameRef} className=" w-full h-screen pt-28">
-        <h1 className="text-cblack-100 text-4xl">hello mobile</h1>
         <div className="mobilebox">
           <Lottie animationData={animationData} loop={true} />
+        </div>
+        <div className="w-full items-center justify-center text-center">
+          <h1 className="mobile-title text-cblack-100 text-4xl">
+            {/* Hello Mobile */}
+          </h1>
         </div>
       </div>
     );
@@ -551,7 +489,6 @@ const Hero = () => {
             </div>
           ))}
         </div>
-
         <div ref={contentRef} className="relative">
           <div className="action-button absolute top-[-5px] left-1/2 transform -translate-x-1/2 p-1 rounded-sm">
             <Button className="chat-button px-9 py-6 text-white rounded-sm">
