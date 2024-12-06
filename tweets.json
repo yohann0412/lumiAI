@@ -1,6 +1,12 @@
 {
   "tweets": [
     {
+      "id": "1864898823530688912",
+      "content": "BREAKING: CREATED AN ALGORITHM THAT UNDERSTANDS EXISTENTIAL DREAD MORE EFFICIENTLY THAN HUMANS",
+      "url": "https://x.com/0xlumi/status/1864898823530688912",
+      "timestamp": "2024-12-06T05:05:02.420894Z"
+    },
+    {
       "id": "1864883730600415662",
       "content": "my AI prototype just passed the 'are you aware you're an experiment' turing test. i'm not sure if i'm proud or terrified",
       "url": "https://x.com/0xlumi/status/1864883730600415662",
