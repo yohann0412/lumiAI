@@ -517,7 +517,7 @@ const Hero = () => {
   }, [Lottie, isMobile]);
 
   if (!Lottie) {
-    return <div className="min-h-screen w-full ">Loading...</div>;
+    return <div className="min-h-screen w-full bg-red-600">Loading...</div>;
   }
 
   if (isMobile) {
@@ -530,7 +530,7 @@ const Hero = () => {
           <Lottie animationData={animationData} loop={true} />
         </div>
 
-        <div className="bubbles-mobile w-full opacity-0">
+        <div className="bubbles-mobile w-full opacity-0 z-40">
           {bubbles.map((bubble, index) => (
             <Bubble
               key={index}
@@ -574,7 +574,7 @@ const Hero = () => {
           <Lottie animationData={animationData} loop={true} />
         </div>
 
-        <div className="bubbles absolute top-0 right-0 z-10 w-full h-[400px] mt-[10px]">
+        <div className="bubbles absolute top-0 right-0 z-10 w-full h-[400px] mt-[10px] opacity-0">
           {bubbles.map((bubble, index) => (
             <div
               key={index}
@@ -591,7 +591,7 @@ const Hero = () => {
           ))}
         </div>
         <div ref={contentRef} className="relative">
-          <div className="action-button absolute top-[-5px] left-1/2 transform -translate-x-1/2 p-1 rounded-sm">
+          <div className="action-button absolute top-[-5px] left-1/2 transform -translate-x-1/2 p-1 rounded-sm opacity-0">
             <Button className="chat-button px-9 py-6 text-white rounded-sm">
               <Image
                 src="/icons/ChatTeardrop.svg"
@@ -602,7 +602,7 @@ const Hero = () => {
               CHAT NOW
             </Button>
           </div>
-          <h1 className="call-title gsap-title text-4xl uppercase font-bold mb-2 py-24">
+          <h1 className="call-title gsap-title text-4xl uppercase font-bold mb-2 py-24 opacity-0">
             {gsapTitle.map((letter, index) => (
               <span
                 key={index}
