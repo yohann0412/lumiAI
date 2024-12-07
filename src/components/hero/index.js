@@ -431,7 +431,7 @@ const Hero = () => {
 
       return () => ctx.revert();
     }
-    
+
     if (isMobile && Lottie) {
       gsap.registerPlugin(ScrollTrigger);
 
