@@ -523,13 +523,13 @@ const Hero = () => {
     return (
       <div className="min-h-screen w-full flex items-center justify-center">
         <div className="flex items-center space-x-2">
-          <div className="w-4 h-4 bg-blue-400 rounded-full animate-bounce"></div>
+          <div className="w-4 h-4 bg-blue-200 rounded-full animate-bounce"></div>
           <div
-            className="w-4 h-4 bg-blue-500 rounded-full animate-bounce"
+            className="w-4 h-4 bg-blue-300 rounded-full animate-bounce"
             style={{ animationDelay: '0.2s' }}
           ></div>
           <div
-            className="w-4 h-4 bg-blue-600 rounded-full animate-bounce"
+            className="w-4 h-4 bg-blue-400 rounded-full animate-bounce"
             style={{ animationDelay: '0.4s' }}
           ></div>
         </div>
