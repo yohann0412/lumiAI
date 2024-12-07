@@ -43,13 +43,13 @@ body {
   /* font-family: var(--font-space-grotesk), Arial, Helvetica, sans-serif; */
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   body {
     background-color: #fff;
     background-image: radial-gradient(circle, #c2c2c2 3px, transparent 3px);
     background-size: 12px 12px;
   }
-}
+} */
 
 
 .font-helvetica {
