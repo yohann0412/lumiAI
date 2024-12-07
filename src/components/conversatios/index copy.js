@@ -9,7 +9,6 @@ gsap.registerPlugin(ScrollTrigger);
 const Conversations = () => {
   const [tweets, setTweets] = useState([]);
   const containerRef = useRef(null);
-  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const fetchTweets = async () => {
@@ -68,32 +67,17 @@ const Conversations = () => {
     return () => ctx.revert();
   }, [tweets]);
 
-  // Handle scrolling to add shadow
-  const handleScroll = () => {
-    if (containerRef.current.scrollTop > 0) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
-    }
-  };
-
   return (
     <div
       ref={containerRef}
-      onScroll={handleScroll} // Track scroll event
-      className="w-full max-h-[62vh] bg-wild-100 overflow-scroll relative"
+      // className="w-full md:h-[670px] max-h-[62vh] bg-wild-100 overflow-scroll"
+      className="w-full  bg-wild-100  "
     >
-      {/* Header with conditional shadow */}
-      <div
-        className={`py-4 bg-wild-100 sticky top-0 z-10 transition-shadow duration-300 ${
-          isScrolled ? "shadow-md" : ""
-        }`}
-      >
-        <h2 className="text-xl text-cblack-100 text-center">Recent Tweets</h2>
+      <div className="py-4">
+        <h2 className=" text-xl text-cblack-100 text-center">Recent Tweets</h2>
       </div>
-
-      <div className="px-4 md:px-12 border-t-2">
-        <div className="border-t-2 border-[#DEDEDE] w-full">
+      <div className="px-4 md:px-12 max-h-[62vh] overflow-scroll border-t-2">
+        <div className="border-t-2 border-[#DEDEDE] w-full ">
           {tweets.map((tweet) => (
             <Link
               href={tweet.url}
