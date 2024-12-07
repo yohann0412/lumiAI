@@ -57,7 +57,7 @@ const Conversations = () => {
                   x: 0,
                   duration: 1,
                   ease: "power3.out",
-                  stagger: 0.1,
+                  stagger: 0.3,
                 }
               );
             },
