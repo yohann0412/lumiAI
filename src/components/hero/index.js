@@ -18,6 +18,7 @@ const bubbles = [
     text: "Happiness",
     type: "left",
     position: { top: "35%", left: "10%" },
+    mobilePosition: { top: "52%", left: "10%" },
     delay: 0.5,
   },
   {
@@ -25,6 +26,8 @@ const bubbles = [
     text: "Delight",
     type: "right",
     position: { top: "40%", right: "15%" },
+    mobilePosition: { top: "52%", right: "10%" },
+
     delay: 0.5,
   },
   {
@@ -32,6 +35,8 @@ const bubbles = [
     text: "Love",
     type: "right",
     position: { top: "80%", right: "25%" },
+    mobilePosition: { top: "57%", right: "25%" },
+
     delay: 0.75,
   },
   {
@@ -39,6 +44,7 @@ const bubbles = [
     text: "Tenderness",
     type: "left",
     position: { top: "90%", left: "15%" },
+    mobilePosition: { top: "59%", left: "14%" },
     delay: 1,
   },
   // 2
@@ -48,6 +54,7 @@ const bubbles = [
     type: "left",
     position: { top: "45%", left: "12%" },
     delay: 2.25,
+    mobilePosition: { top: "53%", left: "26%" },
   },
   {
     imageSrc: "/icons/Drop.svg",
@@ -55,6 +62,7 @@ const bubbles = [
     type: "left",
     position: { top: "80%", left: "18%" },
     delay: 2.25,
+    mobilePosition: { top: "54%", right: "8%" },
   },
   {
     imageSrc: "/icons/Cloud.svg",
@@ -62,6 +70,7 @@ const bubbles = [
     type: "right",
     position: { top: "50%", right: "18%" },
     delay: 2.5,
+    mobilePosition: { top: "57%", right: "29%" },
   },
   {
     imageSrc: "/icons/PersonSimpleWalk.svg",
@@ -69,220 +78,8 @@ const bubbles = [
     type: "right",
     position: { top: "60%", right: "25%" },
     delay: 2.75,
+    mobilePosition: { top: "60%", left: "14%" },
   },
-  // 3
-  {
-    imageSrc: "/icons/SmileyNervous.svg",
-    text: "Anxiety",
-    type: "left",
-    position: { top: "29%", left: "19%" },
-    delay: 3.25,
-  },
-  {
-    imageSrc: "/icons/Ghost.svg",
-    text: "Fear",
-    type: "right",
-    position: { top: "30%", right: "20%" },
-    delay: 3.25,
-  },
-  {
-    imageSrc: "/icons/SmileyAngry.svg",
-    text: "Angry",
-    type: "right",
-    position: { top: "70%", right: "22%" },
-    delay: 3.5,
-  },
-  {
-    imageSrc: "/icons/SealQuestion.svg",
-    text: "Uncertainty",
-    type: "left",
-    position: { top: "70%", left: "20%" },
-    delay: 3.5,
-  },
-  // 4
-  {
-    imageSrc: "/icons/SmileyAngry.svg",
-    text: "Anger",
-    type: "left",
-    position: { top: "40%", left: "10%" },
-    delay: 4.25,
-  },
-  {
-    imageSrc: "/icons/UserMinus.svg",
-    text: "Intolerance",
-    type: "left",
-    position: { top: "95%", left: "20%" },
-    delay: 4.5,
-  },
-  {
-    imageSrc: "/icons/HandFist.svg",
-    text: "Aggression",
-    type: "right",
-    position: { top: "60%", right: "28%" },
-    delay: 4.75,
-  },
-  {
-    imageSrc: "/icons/SmileySad.svg",
-    text: "Disappointment",
-    type: "right",
-    position: { top: "45%", right: "18%" },
-    delay: 5.0,
-  },
-  // 5
-  {
-    imageSrc: "/icons/SmileyXEyes.svg",
-    text: "Guilt",
-    type: "right",
-    position: { top: "35%", right: "22%" },
-    delay: 5.25,
-  },
-  {
-    imageSrc: "/icons/Gavel.svg",
-    text: "Remorse",
-    type: "left",
-    position: { top: "40%", left: "10%" },
-    delay: 5.5,
-  },
-  {
-    imageSrc: "/icons/SmileyMelting.svg",
-    text: "Shame",
-    type: "left",
-    position: { top: "75%", left: "15%" },
-    delay: 5.75,
-  },
-  {
-    imageSrc: "/icons/WechatLogo.svg",
-    text: "Self-criticism",
-    type: "right",
-    position: { top: "60%", right: "25%" },
-    delay: 6.0,
-  },
-  // 6
-  {
-    imageSrc: "/icons/MaskHappy.svg",
-    text: "Relaxation",
-    type: "left",
-    position: { top: "30%", left: "10%" },
-    delay: 6.25,
-  },
-  {
-    imageSrc: "/icons/FlowerLotus.svg",
-    text: "Tranquility",
-    type: "right",
-    position: { top: "45%", right: "18%" },
-    delay: 6.5,
-  },
-  {
-    imageSrc: "/icons/FlowerLotus.svg",
-    text: "Tranquility",
-    type: "left",
-    position: { top: "65%", left: "5%" },
-    delay: 6.75,
-  },
-  {
-    imageSrc: "/icons/Clover.svg",
-    text: "Serenity",
-    type: "right",
-    position: { top: "65%", right: "22%" },
-    delay: 7.0,
-  },
-  // 7
-  {
-    imageSrc: "/icons/SmileyWink.svg",
-    text: "Excited",
-    type: "left",
-    position: { top: "24%", left: "8%" },
-    delay: 7.25,
-  },
-  {
-    imageSrc: "/icons/SmileyWink.svg",
-    text: "Interest",
-    type: "right",
-    position: { top: "40%", right: "18%" },
-    delay: 7.5,
-  },
-  {
-    imageSrc: "/icons/Lightning.svg",
-    text: "Energy",
-    type: "right",
-    position: { top: "76%", right: "14%" },
-    delay: 7.75,
-  },
-  {
-    imageSrc: "/icons/MagnifyingGlass.svg",
-    text: "Curiosity",
-    type: "left",
-    position: { top: "70%", left: "15%" },
-    delay: 8.0,
-  },
-  // 8
-  {
-    imageSrc: "/icons/SmileyMeh.svg",
-    text: "Boring",
-    type: "left",
-    position: { top: "25%", left: "10%" },
-    delay: 8.25,
-  },
-  {
-    imageSrc: "/icons/SmileyMeh.svg",
-    text: "Indifference",
-    type: "right",
-    position: { top: "40%", right: "12%" },
-    delay: 8.5,
-  },
-  {
-    imageSrc: "/icons/BatteryLow.svg",
-    text: "Apathy",
-    type: "left",
-    position: { top: "90%", left: "14%" },
-    delay: 8.75,
-  },
-  {
-    imageSrc: "/icons/SmileyNervous.svg",
-    text: "Despondency",
-    type: "right",
-    position: { top: "65%", right: "15%" },
-    delay: 9.0,
-  },
-];
-
-const gsapTitle = [
-  "T",
-  "h",
-  "e",
-  " ",
-  "A",
-  "I",
-  " ",
-  "T",
-  "h",
-  "a",
-  "t",
-  " ",
-  "T",
-  "h",
-  "i",
-  "n",
-  "k",
-  "s",
-  " ",
-  "A",
-  "l",
-  "o",
-  "n",
-  "g",
-  " ",
-  "S",
-  "i",
-  "d",
-  "e",
-  " ",
-  "U",
-  "s",
-  " ",
-  "A",
-  "l",
-  "l",
 ];
 
 const Hero = () => {
@@ -292,6 +89,7 @@ const Hero = () => {
   const firstFrameRef = useRef(null);
   const mobileFrameRef = useRef(null);
   const bubblesRef = useRef([]);
+  const mobileBubblesRef = useRef([]);
   const contentRef = useRef([]);
   const lettersRef = useRef([]);
 
@@ -318,54 +116,44 @@ const Hero = () => {
   }, []);
 
   useEffect(() => {
-    if (!isMobile && Lottie) {
+    if (isMobile && Lottie) {
       gsap.registerPlugin(ScrollTrigger);
 
       const ctx = gsap.context(() => {
-        const timelineFirst = gsap.timeline({
+        const timelineMobile = gsap.timeline({
           scrollTrigger: {
-            trigger: firstFrameRef.current,
+            trigger: mobileFrameRef.current,
             start: "top top",
-            end: "bottom+=100 top",
-            scrub: true,
+            end: "+=100%",
             pin: true,
+            pinSpacing: true,
+            scrub: true,
             markers: false,
+            toggleActions: "play complete none none",
           },
         });
 
-        timelineFirst
-          .to(firstFrameRef.current, { duration: 1 })
+        timelineMobile
+          .to(mobileFrameRef.current, { duration: 1 })
           .fromTo(
-            firstFrameRef.current.querySelector(".box"),
-            { scale: 2.6 },
-            { scale: 1, duration: 2 },
-            "-=0.5"
+            mobileFrameRef.current.querySelector(".mobilebox"),
+            { scale: 3 },
+            { scale: 2, duration: 2 }
           )
           .fromTo(
-            firstFrameRef.current.querySelector(".bubbles"),
+            mobileFrameRef.current.querySelector(".bubbles-mobile"),
             { opacity: 0, y: 50 },
             { opacity: 1, y: 0, duration: 1 },
             "+=0.5"
           )
           .fromTo(
-            firstFrameRef.current.querySelector(".call-title"),
+            mobileFrameRef.current.querySelector(".mobile-title"),
             { opacity: 0, y: 50 },
             { opacity: 1, y: 0, duration: 1 },
             "+=0.5"
           )
           .fromTo(
-            lettersRef.current,
-            { y: 0, color: "#000" },
-            {
-              y: 20,
-              color: "#67aac9",
-              duration: 0.5,
-              stagger: 0.05,
-            },
-            "+=0.3"
-          )
-          .fromTo(
-            firstFrameRef.current.querySelector(".action-button"),
+            mobileFrameRef.current.querySelector(".mobile-button"),
             { opacity: 0, y: 50 },
             { opacity: 1, y: 0, duration: 1 },
             "+=0.5"
@@ -388,11 +176,11 @@ const Hero = () => {
             const bubbleStartTime = groupStartTime + randomOffset;
 
             bubblesTimeline.fromTo(
-              bubblesRef.current[bubbleIndex],
+              mobileBubblesRef.current[bubbleIndex],
               { opacity: 0, scale: 0 },
               {
                 opacity: 1,
-                scale: 1,
+                scale: 0.7,
                 duration: 1.25,
                 ease: "back.out(1.7)",
               },
@@ -400,44 +188,12 @@ const Hero = () => {
             );
 
             bubblesTimeline.to(
-              bubblesRef.current[bubbleIndex],
+              mobileBubblesRef.current[bubbleIndex],
               { opacity: 0, scale: 0, duration: 1.25, ease: "power2.in" },
               bubbleStartTime + 1.25
             );
           });
         });
-      });
-
-      return () => ctx.revert();
-    }
-    if (isMobile && Lottie) {
-      gsap.registerPlugin(ScrollTrigger);
-
-      const ctx = gsap.context(() => {
-        const timelineMobile = gsap.timeline({
-          scrollTrigger: {
-            trigger: mobileFrameRef.current,
-            start: "top top",
-            end: "bottom+=100 top",
-            scrub: true,
-            pin: true,
-            markers: false,
-          },
-        });
-
-        timelineMobile
-          .to(mobileFrameRef.current, { duration: 1 })
-          .fromTo(
-            mobileFrameRef.current.querySelector(".mobilebox"),
-            { scale: 3 },
-            { scale: 1, duration: 2 }
-          )
-          .fromTo(
-            mobileFrameRef.current.querySelector(".mobile-title"),
-            { opacity: 1, y: 50, },
-            { opacity: 0, y: 0, duration: 1 },
-            "+=0.5"
-          );
       });
 
       return () => ctx.revert();
@@ -450,47 +206,33 @@ const Hero = () => {
 
   if (isMobile) {
     return (
-      <div ref={mobileFrameRef} className=" w-full h-screen pt-28">
+      <div
+        ref={mobileFrameRef}
+        className="w-full h-screen flex flex-col justify-center items-center pb-7"
+      >
         <div className="mobilebox">
           <Lottie animationData={animationData} loop={true} />
         </div>
-        <div className="w-full items-center justify-center text-center">
-          <h1 className="mobile-title text-cblack-100 text-4xl">
-            {/* Hello Mobile */}
-          </h1>
-        </div>
-      </div>
-    );
-  }
 
-  return (
-    <div className="min-h-screen">
-      <div
-        ref={firstFrameRef}
-        className="z-10 relative flex flex-col items-center justify-center text-center text-black min-h-screen overflow-hidden "
-      >
-        <div className="box w-full bg-white mt-4">
-          <Lottie animationData={animationData} loop={true} />
-        </div>
-
-        <div className="bubbles absolute top-0 right-0 z-10 w-full h-[400px] mt-[10px]">
+        <div className="bubbles-mobile w-full opacity-0">
           {bubbles.map((bubble, index) => (
-            <div
+            <Bubble
               key={index}
-              ref={(el) => (bubblesRef.current[index] = el)}
-              className="absolute"
-              style={bubble.position}
-            >
-              <Bubble
-                imageSrc={bubble.imageSrc}
-                text={bubble.text}
-                type={bubble.type}
-              />
-            </div>
+              ref={(el) => (mobileBubblesRef.current[index] = el)}
+              imageSrc={bubble.imageSrc}
+              text={bubble.text}
+              type={bubble.type}
+              position={bubble.mobilePosition}
+              delay={bubble.delay}
+            />
           ))}
         </div>
-        <div ref={contentRef} className="relative">
-          <div className="action-button absolute top-[-5px] left-1/2 transform -translate-x-1/2 p-1 rounded-sm">
+
+        <div className="relative flex flex-col items-center justify-center">
+          <h1 className="mobile-title text-cblack-100 text-2xl font-bold opacity-0 text-center px-5">
+            The AI That Thinks Along Side Us All
+          </h1>
+          <div className="mobile-button top-[-5px]  p-1 rounded-sm opacity-0">
             <Button className="chat-button px-9 py-6 text-white rounded-sm">
               <Image
                 src="/icons/ChatTeardrop.svg"
@@ -501,22 +243,10 @@ const Hero = () => {
               CHAT NOW
             </Button>
           </div>
-          <h1 className="call-title gsap-title text-4xl uppercase font-bold mb-2 py-24">
-            {gsapTitle.map((letter, index) => (
-              <span
-                key={index}
-                ref={(el) => (lettersRef.current[index] = el)}
-                className="inline-block text-cblack-100"
-                style={{ whiteSpace: "pre" }}
-              >
-                {letter}
-              </span>
-            ))}
-          </h1>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default Hero;

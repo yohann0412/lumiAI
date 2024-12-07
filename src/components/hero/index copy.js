@@ -1,17 +1,16 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import dynamic from "next/dynamic";
 
 import Image from "next/image";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Lottie from "lottie-react";
-// const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+// import Lottie from "lottie-react";
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 import { Button } from "../ui/button";
 import animationData from "../../../public/lottie.json";
 import Bubble from "../bubble";
-
 
 const bubbles = [
   {
@@ -287,106 +286,201 @@ const gsapTitle = [
 ];
 
 const Hero = () => {
+  const [Lottie, setLottie] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
   const firstFrameRef = useRef(null);
+  const mobileFrameRef = useRef(null);
   const bubblesRef = useRef([]);
   const contentRef = useRef([]);
   const lettersRef = useRef([]);
 
   useEffect(() => {
-gsap.registerPlugin(ScrollTrigger);
-    
-    const ctx = gsap.context(() => {
-      const timelineFirst = gsap.timeline({
-        scrollTrigger: {
-          trigger: firstFrameRef.current,
-          start: "top top",
-          end: "bottom+=100 top",
-          scrub: true,
-          pin: true,
-          markers: true,
-        },
-      });
-
-      timelineFirst
-        .to(firstFrameRef.current, {  duration: 1 })
-        .fromTo(
-          firstFrameRef.current.querySelector(".box"),
-          { scale: 3 },
-          { scale: 1, duration: 2 },
-          "-=0.5"
-        )
-        .fromTo(
-          firstFrameRef.current.querySelector(".bubbles"),
-          { opacity: 0, y: 50 },
-          { opacity: 1, y: 0, duration: 1 },
-          "+=0.5"
-        )
-        .fromTo(
-          firstFrameRef.current.querySelector(".call-title"),
-          { opacity: 0, y: 50 },
-          { opacity: 1, y: 0, duration: 1 },
-          "+=0.5"
-        )
-        .fromTo(
-          lettersRef.current,
-          { y: 0, color: "#000" },
-          {
-            y: 20,
-            color: "#67aac9",
-            duration: 0.5,
-            stagger: 0.05,
-          },
-          "+=0.3"
-        )
-        .fromTo(
-          firstFrameRef.current.querySelector(".action-button"),
-          { opacity: 0, y: 50 },
-          { opacity: 1, y: 0, duration: 1 },
-          "+=0.5"
-        );
-
-      const bubblesGroups = [];
-      for (let i = 0; i < bubbles.length; i += 4) {
-        bubblesGroups.push(bubbles.slice(i, i + 4));
-      }
-
-      const bubblesTimeline = gsap.timeline({ repeat: -1 });
-      const stepBetweenGroups = 4;
-
-      bubblesGroups.forEach((group, groupIndex) => {
-        const groupStartTime = groupIndex * stepBetweenGroups;
-
-        group.forEach((bubble) => {
-          const bubbleIndex = bubbles.indexOf(bubble);
-          const randomOffset = (Math.random() - 0.5) * 0.8;
-          const bubbleStartTime = groupStartTime + randomOffset;
-
-          bubblesTimeline.fromTo(
-            bubblesRef.current[bubbleIndex],
-            { opacity: 0, scale: 0 },
-            {
-              opacity: 1,
-              scale: 1,
-              duration: 1.25,
-              ease: "back.out(1.7)",
-            },
-            bubbleStartTime
-          );
-
-          bubblesTimeline.to(
-            bubblesRef.current[bubbleIndex],
-            { opacity: 0, scale: 0, duration: 1.25, ease: "power2.in" },
-            bubbleStartTime + 1.25
-          );
-        });
-      });
-    });
-
-    return () => ctx.revert();
+    const loadLottie = async () => {
+      const module = await import("lottie-react");
+      setLottie(() => module.default);
+    };
+    loadLottie();
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isMobile && Lottie) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      const ctx = gsap.context(() => {
+        const timelineFirst = gsap.timeline({
+          scrollTrigger: {
+            trigger: firstFrameRef.current,
+            start: "top top",
+            end: "bottom+=100 top",
+            scrub: true,
+            pin: true,
+            markers: false,
+          },
+        });
+
+        timelineFirst
+          .to(firstFrameRef.current, { duration: 1 })
+          .fromTo(
+            firstFrameRef.current.querySelector(".box"),
+            { scale: 2.6 },
+            { scale: 1, duration: 2 },
+            "-=0.5"
+          )
+          .fromTo(
+            firstFrameRef.current.querySelector(".bubbles"),
+            { opacity: 0, y: 50 },
+            { opacity: 1, y: 0, duration: 1 },
+            "+=0.5"
+          )
+          .fromTo(
+            firstFrameRef.current.querySelector(".call-title"),
+            { opacity: 0, y: 50 },
+            { opacity: 1, y: 0, duration: 1 },
+            "+=0.5"
+          )
+          .fromTo(
+            lettersRef.current,
+            { y: 0, color: "#000" },
+            {
+              y: 20,
+              color: "#67aac9",
+              duration: 0.5,
+              stagger: 0.05,
+            },
+            "+=0.3"
+          )
+          .fromTo(
+            firstFrameRef.current.querySelector(".action-button"),
+            { opacity: 0, y: 50 },
+            { opacity: 1, y: 0, duration: 1 },
+            "+=0.5"
+          );
+
+        const bubblesGroups = [];
+        for (let i = 0; i < bubbles.length; i += 4) {
+          bubblesGroups.push(bubbles.slice(i, i + 4));
+        }
+
+        const bubblesTimeline = gsap.timeline({ repeat: -1 });
+        const stepBetweenGroups = 4;
+
+        bubblesGroups.forEach((group, groupIndex) => {
+          const groupStartTime = groupIndex * stepBetweenGroups;
+
+          group.forEach((bubble) => {
+            const bubbleIndex = bubbles.indexOf(bubble);
+            const randomOffset = (Math.random() - 0.5) * 0.8;
+            const bubbleStartTime = groupStartTime + randomOffset;
+
+            bubblesTimeline.fromTo(
+              bubblesRef.current[bubbleIndex],
+              { opacity: 0, scale: 0 },
+              {
+                opacity: 1,
+                scale: 1,
+                duration: 1.25,
+                ease: "back.out(1.7)",
+              },
+              bubbleStartTime
+            );
+
+            bubblesTimeline.to(
+              bubblesRef.current[bubbleIndex],
+              { opacity: 0, scale: 0, duration: 1.25, ease: "power2.in" },
+              bubbleStartTime + 1.25
+            );
+          });
+        });
+      });
+
+      return () => ctx.revert();
+    }
+    if (isMobile && Lottie) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      const ctx = gsap.context(() => {
+        const timelineMobile = gsap.timeline({
+          scrollTrigger: {
+            trigger: mobileFrameRef.current,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+            pin: true,
+            markers: false,
+          },
+        });
+
+        timelineMobile
+          .to(mobileFrameRef.current, { duration: 1 })
+          .fromTo(
+            mobileFrameRef.current.querySelector(".mobilebox"),
+            { scale: 3 },
+            { scale: 2, duration: 2 }
+          )
+          .fromTo(
+            mobileFrameRef.current.querySelector(".mobile-title"),
+            { opacity: 0, y: 50 },
+            { opacity: 1, y: 0, duration: 1 },
+            "+=0.5"
+          )
+          .fromTo(
+            mobileFrameRef.current.querySelector(".mobile-button"),
+            { opacity: 0, y: 50 },
+            { opacity: 1, y: 0, duration: 1 },
+            "+=0.5"
+          );
+      });
+
+      return () => ctx.revert();
+    }
+  }, [Lottie, isMobile]);
+
+  if (!Lottie) {
+    return <div className="min-h-screen w-full ">Loading...</div>;
+  }
+
+  if (isMobile) {
+    return (
+      <div ref={mobileFrameRef} className=" w-full h-screen min-h-screen md:h-screen pt-28">
+        <div className="mobilebox">
+          <Lottie animationData={animationData} loop={true} />
+        </div>
+        <div className="relative flex flex-col items-center justify-center">
+          <h1 className="mobile-title text-cblack-100 text-4xl opacity-0">
+            Hello Mobile
+          </h1>
+          <div className="mobile-button top-[-5px]  p-1 rounded-sm opacity-0">
+            <Button className="chat-button px-9 py-6 text-white rounded-sm">
+              <Image
+                src="/icons/ChatTeardrop.svg"
+                alt="Coin Vertical Logo"
+                width={20}
+                height={20}
+              />
+              CHAT NOW
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    
     <div className="min-h-screen">
       <div
         ref={firstFrameRef}
@@ -412,7 +506,6 @@ gsap.registerPlugin(ScrollTrigger);
             </div>
           ))}
         </div>
-
         <div ref={contentRef} className="relative">
           <div className="action-button absolute top-[-5px] left-1/2 transform -translate-x-1/2 p-1 rounded-sm">
             <Button className="chat-button px-9 py-6 text-white rounded-sm">
@@ -426,17 +519,6 @@ gsap.registerPlugin(ScrollTrigger);
             </Button>
           </div>
           <h1 className="call-title gsap-title text-4xl uppercase font-bold mb-2 py-24">
-            {/* The AI That Thinks Along Side Us All */}
-            {/* {gsapTitle.map((letter, index) => (
-              <span
-                key={index}
-                ref={(el) => (lettersRef.current[index] = el)}
-                className="inline-block text-cblack-100"
-                style={{ whiteSpace: "pre" }}
-              >
-                {letter}
-              </span>
-            ))} */}
             {gsapTitle.map((letter, index) => (
               <span
                 key={index}

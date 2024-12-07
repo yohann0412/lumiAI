@@ -18,6 +18,7 @@ const bubbles = [
     text: "Happiness",
     type: "left",
     position: { top: "35%", left: "10%" },
+    positionMobile: { top: "14%", left: "10%" },
     delay: 0.5,
   },
   {
@@ -25,6 +26,7 @@ const bubbles = [
     text: "Delight",
     type: "right",
     position: { top: "40%", right: "15%" },
+    positionMobile: { top: "35%", left: "10%" },
     delay: 0.5,
   },
   {
@@ -32,6 +34,7 @@ const bubbles = [
     text: "Love",
     type: "right",
     position: { top: "80%", right: "25%" },
+    positionMobile: { top: "35%", left: "10%" },
     delay: 0.75,
   },
   {
@@ -39,262 +42,23 @@ const bubbles = [
     text: "Tenderness",
     type: "left",
     position: { top: "90%", left: "15%" },
+    positionMobile: { top: "35%", left: "10%" },
     delay: 1,
   },
   // 2
-  {
-    imageSrc: "/icons/SmileySad.svg",
-    text: "Sadness",
-    type: "left",
-    position: { top: "45%", left: "12%" },
-    delay: 2.25,
-  },
-  {
-    imageSrc: "/icons/Drop.svg",
-    text: "Melancholy",
-    type: "left",
-    position: { top: "80%", left: "18%" },
-    delay: 2.25,
-  },
-  {
-    imageSrc: "/icons/Cloud.svg",
-    text: "Nostalgia",
-    type: "right",
-    position: { top: "50%", right: "18%" },
-    delay: 2.5,
-  },
-  {
-    imageSrc: "/icons/PersonSimpleWalk.svg",
-    text: "Loneliness",
-    type: "right",
-    position: { top: "60%", right: "25%" },
-    delay: 2.75,
-  },
-  // 3
-  {
-    imageSrc: "/icons/SmileyNervous.svg",
-    text: "Anxiety",
-    type: "left",
-    position: { top: "29%", left: "19%" },
-    delay: 3.25,
-  },
-  {
-    imageSrc: "/icons/Ghost.svg",
-    text: "Fear",
-    type: "right",
-    position: { top: "30%", right: "20%" },
-    delay: 3.25,
-  },
-  {
-    imageSrc: "/icons/SmileyAngry.svg",
-    text: "Angry",
-    type: "right",
-    position: { top: "70%", right: "22%" },
-    delay: 3.5,
-  },
-  {
-    imageSrc: "/icons/SealQuestion.svg",
-    text: "Uncertainty",
-    type: "left",
-    position: { top: "70%", left: "20%" },
-    delay: 3.5,
-  },
-  // 4
-  {
-    imageSrc: "/icons/SmileyAngry.svg",
-    text: "Anger",
-    type: "left",
-    position: { top: "40%", left: "10%" },
-    delay: 4.25,
-  },
-  {
-    imageSrc: "/icons/UserMinus.svg",
-    text: "Intolerance",
-    type: "left",
-    position: { top: "95%", left: "20%" },
-    delay: 4.5,
-  },
-  {
-    imageSrc: "/icons/HandFist.svg",
-    text: "Aggression",
-    type: "right",
-    position: { top: "60%", right: "28%" },
-    delay: 4.75,
-  },
-  {
-    imageSrc: "/icons/SmileySad.svg",
-    text: "Disappointment",
-    type: "right",
-    position: { top: "45%", right: "18%" },
-    delay: 5.0,
-  },
-  // 5
-  {
-    imageSrc: "/icons/SmileyXEyes.svg",
-    text: "Guilt",
-    type: "right",
-    position: { top: "35%", right: "22%" },
-    delay: 5.25,
-  },
-  {
-    imageSrc: "/icons/Gavel.svg",
-    text: "Remorse",
-    type: "left",
-    position: { top: "40%", left: "10%" },
-    delay: 5.5,
-  },
-  {
-    imageSrc: "/icons/SmileyMelting.svg",
-    text: "Shame",
-    type: "left",
-    position: { top: "75%", left: "15%" },
-    delay: 5.75,
-  },
-  {
-    imageSrc: "/icons/WechatLogo.svg",
-    text: "Self-criticism",
-    type: "right",
-    position: { top: "60%", right: "25%" },
-    delay: 6.0,
-  },
-  // 6
-  {
-    imageSrc: "/icons/MaskHappy.svg",
-    text: "Relaxation",
-    type: "left",
-    position: { top: "30%", left: "10%" },
-    delay: 6.25,
-  },
-  {
-    imageSrc: "/icons/FlowerLotus.svg",
-    text: "Tranquility",
-    type: "right",
-    position: { top: "45%", right: "18%" },
-    delay: 6.5,
-  },
-  {
-    imageSrc: "/icons/FlowerLotus.svg",
-    text: "Tranquility",
-    type: "left",
-    position: { top: "65%", left: "5%" },
-    delay: 6.75,
-  },
-  {
-    imageSrc: "/icons/Clover.svg",
-    text: "Serenity",
-    type: "right",
-    position: { top: "65%", right: "22%" },
-    delay: 7.0,
-  },
-  // 7
-  {
-    imageSrc: "/icons/SmileyWink.svg",
-    text: "Excited",
-    type: "left",
-    position: { top: "24%", left: "8%" },
-    delay: 7.25,
-  },
-  {
-    imageSrc: "/icons/SmileyWink.svg",
-    text: "Interest",
-    type: "right",
-    position: { top: "40%", right: "18%" },
-    delay: 7.5,
-  },
-  {
-    imageSrc: "/icons/Lightning.svg",
-    text: "Energy",
-    type: "right",
-    position: { top: "76%", right: "14%" },
-    delay: 7.75,
-  },
-  {
-    imageSrc: "/icons/MagnifyingGlass.svg",
-    text: "Curiosity",
-    type: "left",
-    position: { top: "70%", left: "15%" },
-    delay: 8.0,
-  },
-  // 8
-  {
-    imageSrc: "/icons/SmileyMeh.svg",
-    text: "Boring",
-    type: "left",
-    position: { top: "25%", left: "10%" },
-    delay: 8.25,
-  },
-  {
-    imageSrc: "/icons/SmileyMeh.svg",
-    text: "Indifference",
-    type: "right",
-    position: { top: "40%", right: "12%" },
-    delay: 8.5,
-  },
-  {
-    imageSrc: "/icons/BatteryLow.svg",
-    text: "Apathy",
-    type: "left",
-    position: { top: "90%", left: "14%" },
-    delay: 8.75,
-  },
-  {
-    imageSrc: "/icons/SmileyNervous.svg",
-    text: "Despondency",
-    type: "right",
-    position: { top: "65%", right: "15%" },
-    delay: 9.0,
-  },
-];
-
-const gsapTitle = [
-  "T",
-  "h",
-  "e",
-  " ",
-  "A",
-  "I",
-  " ",
-  "T",
-  "h",
-  "a",
-  "t",
-  " ",
-  "T",
-  "h",
-  "i",
-  "n",
-  "k",
-  "s",
-  " ",
-  "A",
-  "l",
-  "o",
-  "n",
-  "g",
-  " ",
-  "S",
-  "i",
-  "d",
-  "e",
-  " ",
-  "U",
-  "s",
-  " ",
-  "A",
-  "l",
-  "l",
 ];
 
 const Hero = () => {
   const [Lottie, setLottie] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   const firstFrameRef = useRef(null);
+  const mobileFrameRef = useRef(null);
   const bubblesRef = useRef([]);
   const contentRef = useRef([]);
   const lettersRef = useRef([]);
 
   useEffect(() => {
-    // Dynamically import 'lottie-react' and update the state
     const loadLottie = async () => {
       const module = await import("lottie-react");
       setLottie(() => module.default);
@@ -302,263 +66,119 @@ const Hero = () => {
     loadLottie();
   }, []);
 
-  // useEffect(() => {
-  //   gsap.registerPlugin(ScrollTrigger);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
 
-  //   const ctx = gsap.context(() => {
-  //     const timelineFirst = gsap.timeline({
-  //       scrollTrigger: {
-  //         trigger: firstFrameRef.current,
-  //         start: "top top",
-  //         end: "bottom+=100 top",
-  //         scrub: true,
-  //         pin: true,
-  //         markers: true,
-  //       },
-  //     });
+    handleResize();
 
-  //     timelineFirst
-  //       .to(firstFrameRef.current, { duration: 1 })
-  //       .fromTo(
-  //         firstFrameRef.current.querySelector(".box"),
-  //         { scale: 3 },
-  //         { scale: 1, duration: 2 },
-  //         "-=0.5"
-  //       )
-  //       .fromTo(
-  //         firstFrameRef.current.querySelector(".bubbles"),
-  //         { opacity: 0, y: 50 },
-  //         { opacity: 1, y: 0, duration: 1 },
-  //         "+=0.5"
-  //       )
-  //       .fromTo(
-  //         firstFrameRef.current.querySelector(".call-title"),
-  //         { opacity: 0, y: 50 },
-  //         { opacity: 1, y: 0, duration: 1 },
-  //         "+=0.5"
-  //       )
-  //       .fromTo(
-  //         lettersRef.current,
-  //         { y: 0, color: "#000" },
-  //         {
-  //           y: 20,
-  //           color: "#67aac9",
-  //           duration: 0.5,
-  //           stagger: 0.05,
-  //         },
-  //         "+=0.3"
-  //       )
-  //       .fromTo(
-  //         firstFrameRef.current.querySelector(".action-button"),
-  //         { opacity: 0, y: 50 },
-  //         { opacity: 1, y: 0, duration: 1 },
-  //         "+=0.5"
-  //       );
+    window.addEventListener("resize", handleResize);
 
-  //     const bubblesGroups = [];
-  //     for (let i = 0; i < bubbles.length; i += 4) {
-  //       bubblesGroups.push(bubbles.slice(i, i + 4));
-  //     }
-
-  //     const bubblesTimeline = gsap.timeline({ repeat: -1 });
-  //     const stepBetweenGroups = 4;
-
-  //     bubblesGroups.forEach((group, groupIndex) => {
-  //       const groupStartTime = groupIndex * stepBetweenGroups;
-
-  //       group.forEach((bubble) => {
-  //         const bubbleIndex = bubbles.indexOf(bubble);
-  //         const randomOffset = (Math.random() - 0.5) * 0.8;
-  //         const bubbleStartTime = groupStartTime + randomOffset;
-
-  //         bubblesTimeline.fromTo(
-  //           bubblesRef.current[bubbleIndex],
-  //           { opacity: 0, scale: 0 },
-  //           {
-  //             opacity: 1,
-  //             scale: 1,
-  //             duration: 1.25,
-  //             ease: "back.out(1.7)",
-  //           },
-  //           bubbleStartTime
-  //         );
-
-  //         bubblesTimeline.to(
-  //           bubblesRef.current[bubbleIndex],
-  //           { opacity: 0, scale: 0, duration: 1.25, ease: "power2.in" },
-  //           bubbleStartTime + 1.25
-  //         );
-  //       });
-  //     });
-  //   });
-
-  //   return () => ctx.revert();
-  // }, []);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
-    if (Lottie) {
+    if (isMobile && Lottie) {
       gsap.registerPlugin(ScrollTrigger);
 
       const ctx = gsap.context(() => {
-        const timelineFirst = gsap.timeline({
+        const timelineMobile = gsap.timeline({
           scrollTrigger: {
-            trigger: firstFrameRef.current,
+            trigger: mobileFrameRef.current,
             start: "top top",
-            end: "bottom+=100 top",
-            scrub: true,
+            end: "+=100%",
             pin: true,
-            markers: true,
+            pinSpacing: true,
+            scrub: true,
+            markers: false,
+            toggleActions: "play complete none none",
           },
         });
 
-        timelineFirst
-          .to(firstFrameRef.current, { duration: 1 })
+        timelineMobile
+          .to(mobileFrameRef.current, { duration: 1 })
           .fromTo(
-            firstFrameRef.current.querySelector(".box"),
+            mobileFrameRef.current.querySelector(".mobilebox"),
             { scale: 3 },
-            { scale: 1, duration: 2 },
-            "-=0.5"
+            { scale: 2, duration: 2 }
           )
           .fromTo(
-            firstFrameRef.current.querySelector(".bubbles"),
+            mobileFrameRef.current.querySelector(".mobile-title"),
             { opacity: 0, y: 50 },
             { opacity: 1, y: 0, duration: 1 },
             "+=0.5"
           )
           .fromTo(
-            firstFrameRef.current.querySelector(".call-title"),
-            { opacity: 0, y: 50 },
-            { opacity: 1, y: 0, duration: 1 },
-            "+=0.5"
-          )
-          .fromTo(
-            lettersRef.current,
-            { y: 0, color: "#000" },
-            {
-              y: 20,
-              color: "#67aac9",
-              duration: 0.5,
-              stagger: 0.05,
-            },
-            "+=0.3"
-          )
-          .fromTo(
-            firstFrameRef.current.querySelector(".action-button"),
+            mobileFrameRef.current.querySelector(".mobile-button"),
             { opacity: 0, y: 50 },
             { opacity: 1, y: 0, duration: 1 },
             "+=0.5"
           );
-
-        const bubblesGroups = [];
-        for (let i = 0; i < bubbles.length; i += 4) {
-          bubblesGroups.push(bubbles.slice(i, i + 4));
-        }
-
-        const bubblesTimeline = gsap.timeline({ repeat: -1 });
-        const stepBetweenGroups = 4;
-
-        bubblesGroups.forEach((group, groupIndex) => {
-          const groupStartTime = groupIndex * stepBetweenGroups;
-
-          group.forEach((bubble) => {
-            const bubbleIndex = bubbles.indexOf(bubble);
-            const randomOffset = (Math.random() - 0.5) * 0.8;
-            const bubbleStartTime = groupStartTime + randomOffset;
-
-            bubblesTimeline.fromTo(
-              bubblesRef.current[bubbleIndex],
-              { opacity: 0, scale: 0 },
-              {
-                opacity: 1,
-                scale: 1,
-                duration: 1.25,
-                ease: "back.out(1.7)",
-              },
-              bubbleStartTime
-            );
-
-            bubblesTimeline.to(
-              bubblesRef.current[bubbleIndex],
-              { opacity: 0, scale: 0, duration: 1.25, ease: "power2.in" },
-              bubbleStartTime + 1.25
-            );
-          });
-        });
       });
 
       return () => ctx.revert();
     }
-  }, [Lottie]);
+  }, [Lottie, isMobile]);
+
   if (!Lottie) {
     return <div className="min-h-screen w-full ">Loading...</div>;
   }
 
-  return (
-    <div className="min-h-screen">
-      <div
-        ref={firstFrameRef}
-        className="z-10 relative flex flex-col items-center justify-center text-center text-black min-h-screen overflow-hidden "
-      >
-        <div className="box w-full bg-white mt-4">
-          <Lottie animationData={animationData} loop={true} />
-        </div>
-
-        <div className="bubbles absolute top-0 right-0 z-10 w-full h-[400px] mt-[10px]">
-          {bubbles.map((bubble, index) => (
-            <div
-              key={index}
-              ref={(el) => (bubblesRef.current[index] = el)}
-              className="absolute"
-              style={bubble.position}
-            >
-              <Bubble
-                imageSrc={bubble.imageSrc}
-                text={bubble.text}
-                type={bubble.type}
-              />
-            </div>
-          ))}
-        </div>
-
-        <div ref={contentRef} className="relative">
-          <div className="action-button absolute top-[-5px] left-1/2 transform -translate-x-1/2 p-1 rounded-sm">
-            <Button className="chat-button px-9 py-6 text-white rounded-sm">
-              <Image
-                src="/icons/ChatTeardrop.svg"
-                alt="Coin Vertical Logo"
-                width={20}
-                height={20}
-              />
-              CHAT NOW
-            </Button>
-          </div>
-          <h1 className="call-title gsap-title text-4xl uppercase font-bold mb-2 py-24">
-            {/* The AI That Thinks Along Side Us All */}
-            {/* {gsapTitle.map((letter, index) => (
-              <span
-                key={index}
-                ref={(el) => (lettersRef.current[index] = el)}
-                className="inline-block text-cblack-100"
-                style={{ whiteSpace: "pre" }}
-              >
-                {letter}
-              </span>
-            ))} */}
-            {gsapTitle.map((letter, index) => (
-              <span
-                key={index}
-                ref={(el) => (lettersRef.current[index] = el)}
-                className="inline-block text-cblack-100"
-                style={{ whiteSpace: "pre" }}
-              >
-                {letter}
-              </span>
-            ))}
-          </h1>
-        </div>
-      </div>
+  if (isMobile) {
+    return (
+<div
+  ref={mobileFrameRef}
+  className="w-full h-screen flex flex-col justify-center items-center relative overflow-hidden"
+>
+  {/* Основной контент */}
+  <div className="mobilebox">
+    <Lottie animationData={animationData} loop={true} />
+  </div>
+  <div className="relative flex flex-col items-center justify-center z-10">
+    <h1 className="mobile-title text-cblack-100 text-4xl opacity-0">
+      Hello Mobile
+    </h1>
+    <div className="mobile-button top-[-5px] p-1 rounded-sm opacity-0">
+      <Button className="chat-button px-9 py-6 text-white rounded-sm">
+        <Image
+          src="/icons/ChatTeardrop.svg"
+          alt="Coin Vertical Logo"
+          width={20}
+          height={20}
+        />
+        CHAT NOW
+      </Button>
     </div>
-  );
+  </div>
+
+  {/* Bubbles */}
+  <div className="absolute w-full h-full top-0 left-0">
+    {bubbles.map((bubble, index) => (
+      <div
+        key={index}
+        className={`absolute z-0 transition-all duration-500`}
+        style={
+          isMobile
+            ? bubble.positionMobile
+            : bubble.position // Учитываем мобильные позиции
+        }
+      >
+        <Bubble
+          imageSrc={bubble.imageSrc}
+          text={bubble.text}
+          type={bubble.type}
+          delay={bubble.delay}
+        />
+      </div>
+    ))}
+  </div>
+</div>
+
+    );
+  }
 };
 
 export default Hero;

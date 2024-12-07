@@ -1,17 +1,20 @@
-const Bubble = ({ 
-  imageSrc, 
-  text, 
-  type = "left", 
-  position = { top: "50%", left: "50%", width : "max-content" },
+import React, { forwardRef } from "react";
+
+const Bubble = forwardRef(({
+  imageSrc,
+  text,
+  type = "left",
+  position = { top: "50%", left: "50%", width: "max-content" },
   className = "",
-}) => {
-  const tailStyle = type === "left" 
+}, ref) => {
+  const tailStyle = type === "left"
     ? "right-[-8px] top-1/2 -translate-y-1/2 border-y-[10px] border-y-transparent border-l-[10px] border-l-[#fff]"
     : "left-[-8px] top-1/2 -translate-y-1/2 border-y-[10px] border-y-transparent border-r-[10px] border-r-[#fff]";
 
   return (
     <div
-      className={`absolute scale-50 md:scale-[1] flex flex-col md:flex-row  items-center gap-2 px-4 py-2 bg-[#fff]  text-cblack-100 rounded-lg shadow-md animate-float ${className}`}
+      ref={ref} 
+      className={`absolute scale-50 md:scale-[1] flex flex-col md:flex-row items-center gap-2 px-4 py-2 bg-[#fff] text-cblack-100 rounded-lg shadow-md animate-float ${className}`}
       style={{ ...position }}
     >
       <img src={imageSrc} alt="Bubble Icon" className="w-6 h-6" />
@@ -23,6 +26,6 @@ const Bubble = ({
       ></div>
     </div>
   );
-};
+});
 
 export default Bubble;

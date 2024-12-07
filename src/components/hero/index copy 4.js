@@ -304,15 +304,12 @@ const Hero = () => {
   }, []);
 
   useEffect(() => {
-    // Проверка ширины экрана
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
 
-    // Установка значения при первом рендере
     handleResize();
 
-    // Добавление слушателя изменения размера экрана
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -332,7 +329,7 @@ const Hero = () => {
             end: "bottom+=100 top",
             scrub: true,
             pin: true,
-            markers: true,
+            markers: false,
           },
         });
 
@@ -340,7 +337,7 @@ const Hero = () => {
           .to(firstFrameRef.current, { duration: 1 })
           .fromTo(
             firstFrameRef.current.querySelector(".box"),
-            { scale: 3 },
+            { scale: 2.6 },
             { scale: 1, duration: 2 },
             "-=0.5"
           )
@@ -417,95 +414,42 @@ const Hero = () => {
       gsap.registerPlugin(ScrollTrigger);
 
       const ctx = gsap.context(() => {
-        const timelineFirst = gsap.timeline({
+        const timelineMobile = gsap.timeline({
           scrollTrigger: {
-            trigger: firstFrameRef.current,
+            trigger: mobileFrameRef.current,
             start: "top top",
-            end: "bottom+=100 top",
-            scrub: true,
+            end: "+=100%",
             pin: true,
-            markers: true,
+            pinSpacing: true,
+            scrub: true,
+            markers: false,
+            toggleActions: "play complete none none",
           },
         });
 
-        timelineFirst
-          .to(firstFrameRef.current, { duration: 1 })
+        timelineMobile
+          .to(mobileFrameRef.current, { duration: 1 })
           .fromTo(
-            firstFrameRef.current.querySelector(".box"),
+            mobileFrameRef.current.querySelector(".mobilebox"),
             { scale: 3 },
-            { scale: 1, duration: 2 },
-            "-=0.5"
+            { scale: 2, duration: 2 }
           )
           .fromTo(
-            firstFrameRef.current.querySelector(".bubbles"),
+            mobileFrameRef.current.querySelector(".mobile-title"),
             { opacity: 0, y: 50 },
             { opacity: 1, y: 0, duration: 1 },
             "+=0.5"
           )
           .fromTo(
-            firstFrameRef.current.querySelector(".call-title"),
-            { opacity: 0, y: 50 },
-            { opacity: 1, y: 0, duration: 1 },
-            "+=0.5"
-          )
-          .fromTo(
-            lettersRef.current,
-            { y: 0, color: "#000" },
-            {
-              y: 20,
-              color: "#67aac9",
-              duration: 0.5,
-              stagger: 0.05,
-            },
-            "+=0.3"
-          )
-          .fromTo(
-            firstFrameRef.current.querySelector(".action-button"),
+            mobileFrameRef.current.querySelector(".mobile-button"),
             { opacity: 0, y: 50 },
             { opacity: 1, y: 0, duration: 1 },
             "+=0.5"
           );
-
-        const bubblesGroups = [];
-        for (let i = 0; i < bubbles.length; i += 4) {
-          bubblesGroups.push(bubbles.slice(i, i + 4));
-        }
-
-        const bubblesTimeline = gsap.timeline({ repeat: -1 });
-        const stepBetweenGroups = 4;
-
-        bubblesGroups.forEach((group, groupIndex) => {
-          const groupStartTime = groupIndex * stepBetweenGroups;
-
-          group.forEach((bubble) => {
-            const bubbleIndex = bubbles.indexOf(bubble);
-            const randomOffset = (Math.random() - 0.5) * 0.8;
-            const bubbleStartTime = groupStartTime + randomOffset;
-
-            bubblesTimeline.fromTo(
-              bubblesRef.current[bubbleIndex],
-              { opacity: 0, scale: 0 },
-              {
-                opacity: 1,
-                scale: 1,
-                duration: 1.25,
-                ease: "back.out(1.7)",
-              },
-              bubbleStartTime
-            );
-
-            bubblesTimeline.to(
-              bubblesRef.current[bubbleIndex],
-              { opacity: 0, scale: 0, duration: 1.25, ease: "power2.in" },
-              bubbleStartTime + 1.25
-            );
-          });
-        });
       });
 
       return () => ctx.revert();
     }
-
   }, [Lottie, isMobile]);
 
   if (!Lottie) {
@@ -514,10 +458,40 @@ const Hero = () => {
 
   if (isMobile) {
     return (
-      <div className="w-full h-screen">
-        <h1 className="text-cblack-100 text-4xl">hello mobile</h1>
-        <div>
+      <div
+        ref={mobileFrameRef}
+        className="w-full h-screen flex flex-col justify-center items-center pb-6"
+      >
+        <div className="mobilebox">
           <Lottie animationData={animationData} loop={true} />
+        </div>
+        <div className="relative flex flex-col items-center justify-center">
+          <h1 className="mobile-title text-cblack-100 text-4xl opacity-0">
+            Hello Mobile
+          </h1>
+          <div className="mobile-button top-[-5px]  p-1 rounded-sm opacity-0">
+            <Button className="chat-button px-9 py-6 text-white rounded-sm">
+              <Image
+                src="/icons/ChatTeardrop.svg"
+                alt="Coin Vertical Logo"
+                width={20}
+                height={20}
+              />
+              CHAT NOW
+            </Button>
+          </div>
+        </div>
+        <div>
+          {bubbles.map((bubble, index) => (
+            <Bubble
+              key={index}
+              imageSrc={bubble.imageSrc}
+              text={bubble.text}
+              type={bubble.type}
+              position={bubble.positionMobile}
+              delay={bubble.delay}
+            />
+          ))}
         </div>
       </div>
     );
@@ -549,7 +523,6 @@ const Hero = () => {
             </div>
           ))}
         </div>
-
         <div ref={contentRef} className="relative">
           <div className="action-button absolute top-[-5px] left-1/2 transform -translate-x-1/2 p-1 rounded-sm">
             <Button className="chat-button px-9 py-6 text-white rounded-sm">

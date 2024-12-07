@@ -37,7 +37,7 @@ const Header = () => {
           duration: 0.5,
           ease: "power1.out",
           onComplete: () => {
-            header.style.position = "absolute"; // Возвращаем позицию на absolute
+            header.style.position = "absolute"; 
           },
         });
       },
