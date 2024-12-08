@@ -388,7 +388,8 @@ const Hero = () => {
 
         <div className="relative flex flex-col items-center justify-center transform -translate-y-8">
           <h1 className="mobile-title text-cblack-100 text-2xl font-bold opacity-0 text-center px-5">
-            <span className="gradient-text">The AI</span> <br></br> That Thinks Along Side Us All
+            <span className="gradient-text">The AI</span> <br></br> That Thinks
+            Along Side Us All
           </h1>
           <div className="mobile-button top-[-5px]  p-1 rounded-sm opacity-0">
             <Button className="chat-button px-9 py-6 text-white rounded-sm">
@@ -398,7 +399,7 @@ const Hero = () => {
                 width={20}
                 height={20}
               />
-              CHAT NOW
+              Talk to me...
             </Button>
           </div>
         </div>
@@ -445,15 +446,21 @@ const Hero = () => {
         <div ref={contentRef} className="absolute bottom-0">
           {/* <div className="action-button top-[-30px] left-1/2 transform -translate-x-1/2 p-1 rounded-sm opacity-0"> */}
           <div className="action-button top-[-30px] p-1 rounded-sm opacity-0">
-            <Button className="chat-button px-9 py-6 text-white rounded-sm">
-              <Image
-                src="/icons/ChatTeardrop.svg"
-                alt="Coin Vertical Logo"
-                width={20}
-                height={20}
-              />
-              CHAT NOW
-            </Button>
+            <a
+              href="https://x.com/0xlumi"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="chat-button px-9 py-6 text-white rounded-sm">
+                <Image
+                  src="/icons/ChatTeardrop.svg"
+                  alt="Coin Vertical Logo"
+                  width={20}
+                  height={20}
+                />
+                Talk to me...
+              </Button>
+            </a>
           </div>
           <h1 className="call-title gsap-title text-4xl uppercase font-bold mb-2 pt-10 py-24 opacity-0">
             {gsapTitle.map((letter, index) => (

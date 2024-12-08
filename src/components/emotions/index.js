@@ -68,7 +68,7 @@ const EmotionVisualizer = ({ emotions }) => {
   }));
 
   return (
-    <div ref={ref} className="py-11 px-4 rounded-xl shadow-lg overflow-hidden">
+    <div ref={ref} className="py-28 px-4 rounded-xl shadow-lg overflow-hidden">
       <div className="w-full text-center mb-6">
         <p className="text-lg font-semibold text-gray-800">
           I am feeling {data[0]?.name || "unsure"} today
