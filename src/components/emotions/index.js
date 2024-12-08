@@ -8,29 +8,29 @@ import { useInView } from "react-intersection-observer";
 const EmotionVisualizer = ({ emotions }) => {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true });
 
-  const colors = [
-    "#0A0F1E",
-    "#1C253C",
-    "#39475F",
-    "#64778B",
-    "#8FA6B7",
-    "#20C4F4",
-    "#00D8A9",
-    "#66E5B3",
-    "#B6D6E2",
-  ];
-
   // const colors = [
-  //   "#111827",
-  //   "#1E293B",
-  //   "#2D3748",
-  //   "#4B5563",
-  //   "#9CA3AF",
-  //   "#10B981",
-  //   "#3B82F6",
-  //   "#818CF8",
-  //   "#0EA5E9",
+  //   "#0A0F1E",
+  //   "#1C253C",
+  //   "#39475F",
+  //   "#64778B",
+  //   "#8FA6B7",
+  //   "#20C4F4",
+  //   "#00D8A9",
+  //   "#66E5B3",
+  //   "#B6D6E2",
   // ];
+
+  const colors = [
+    "#111827",
+    "#1E293B",
+    "#2D3748",
+    "#4B5563",
+    "#9CA3AF",
+    "#10B981",
+    "#3B82F6",
+    "#818CF8",
+    "#0EA5E9",
+  ];
 
   // const colors = [
   //   "#0E131C",
@@ -100,53 +100,51 @@ const EmotionVisualizer = ({ emotions }) => {
       </div>
 
       <div
-  className="flex flex-wrap justify-center items-end gap-2"
-  style={{ maxWidth: "100%", overflowX: "auto" }}
->
-  {data.map(({ name, value, color }, i) => (
-    <React.Fragment key={name}>
-      <div
-        className="flex flex-col items-center sm:items-end"
-        style={{ margin: "0 4px" }}
+        className="flex flex-wrap justify-center items-end gap-2"
+        style={{ maxWidth: "100%", overflowX: "auto" }}
       >
-        <div className="flex items-end">
-          <div className="h-[50px] bg-white rounded-md flex items-end">
+        {data.map(({ name, value, color }, i) => (
+          <React.Fragment key={name}>
             <div
-              className="w-4 rounded-b-md"
-              style={{
-                backgroundColor: color,
-                height: `${(value / totalMessages) * 120}px`,
-              }}
-              title={`${name}: ${Math.round((value / totalMessages) * 100)}%`}
-            />
-          </div>
-          <div className="flex flex-col items-center pl-1">
-            <p
-              className="text-xs font-medium text-gray-700 text-vertical"
-              style={{
-                writingMode: "vertical-rl",
-                textAlign: "center",
-                whiteSpace: "nowrap",
-              }}
+              className="flex flex-col items-center sm:items-end"
+              style={{ margin: "0 4px" }}
             >
-              {name}
-            </p>
-          </div>
-        </div>
-        <div className="w-full text-center">
-          <p className="text-xs font-normal text-gray-500 mt-1">
-            {Math.round((value / totalMessages) * 100)}%
-          </p>
-        </div>
+              <div className="flex items-end">
+                <div className="h-[50px] bg-white rounded-md flex items-end">
+                  <div
+                    className="w-4 rounded-b-md"
+                    style={{
+                      backgroundColor: color,
+                      height: `${(value / totalMessages) * 120}px`,
+                    }}
+                    title={`${name}: ${Math.round(
+                      (value / totalMessages) * 100
+                    )}%`}
+                  />
+                </div>
+                <div className="flex flex-col items-center pl-1">
+                  <p
+                    className="text-xs font-medium text-gray-700 text-vertical"
+                    style={{
+                      writingMode: "vertical-rl",
+                      textAlign: "center",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    {name}
+                  </p>
+                </div>
+              </div>
+              <div className="w-full text-center">
+                <p className="text-xs font-normal text-gray-500 mt-1">
+                  {Math.round((value / totalMessages) * 100)}%
+                </p>
+              </div>
+            </div>
+            {i === 4 && <div className="w-full block sm:hidden" />}
+          </React.Fragment>
+        ))}
       </div>
-      {/* Добавляем перенос только на мобильных устройствах */}
-      {i === 4 && (
-        <div className="w-full block sm:hidden" /> // Скрываем перенос на больших экранах
-      )}
-    </React.Fragment>
-  ))}
-</div>
-
     </div>
   );
 };
