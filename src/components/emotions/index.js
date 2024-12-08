@@ -99,43 +99,54 @@ const EmotionVisualizer = ({ emotions }) => {
         </ResponsiveContainer>
       </div>
 
-      <div className="flex flex-wrap justify-center items-end">
-        {data.map(({ name, value, color }) => (
-          <div
-            key={name}
-            className="flex flex-col items-end mx-2"
-            style={{ margin: "0 4px" }}
-          >
-            <div className="flex items-end">
-              <div className="h-[50px] bg-white rounded-md flex items-end">
-                <div
-                  className="w-4 rounded-b-md"
-                  style={{
-                    backgroundColor: color,
-                    height: `${(value / totalMessages) * 120}px`,
-                  }}
-                  title={`${name}: ${Math.round(
-                    (value / totalMessages) * 100
-                  )}%`}
-                />
-              </div>
-              <div className="flex flex-col items-center pl-1">
-                <p
-                  className="text-xs font-medium text-gray-700 text-vertical"
-                  style={{ writingMode: "vertical-rl", textAlign: "center" }}
-                >
-                  {name}
-                </p>
-              </div>
-            </div>
-            <div className="w-full">
-              <p className="text-xs font-normal text-gray-500 mt-1">
-                {Math.round((value / totalMessages) * 100)}%
-              </p>
-            </div>
+      <div
+  className="flex flex-wrap justify-center items-end gap-2"
+  style={{ maxWidth: "100%", overflowX: "auto" }}
+>
+  {data.map(({ name, value, color }, i) => (
+    <React.Fragment key={name}>
+      <div
+        className="flex flex-col items-center sm:items-end"
+        style={{ margin: "0 4px" }}
+      >
+        <div className="flex items-end">
+          <div className="h-[50px] bg-white rounded-md flex items-end">
+            <div
+              className="w-4 rounded-b-md"
+              style={{
+                backgroundColor: color,
+                height: `${(value / totalMessages) * 120}px`,
+              }}
+              title={`${name}: ${Math.round((value / totalMessages) * 100)}%`}
+            />
           </div>
-        ))}
+          <div className="flex flex-col items-center pl-1">
+            <p
+              className="text-xs font-medium text-gray-700 text-vertical"
+              style={{
+                writingMode: "vertical-rl",
+                textAlign: "center",
+                whiteSpace: "nowrap",
+              }}
+            >
+              {name}
+            </p>
+          </div>
+        </div>
+        <div className="w-full text-center">
+          <p className="text-xs font-normal text-gray-500 mt-1">
+            {Math.round((value / totalMessages) * 100)}%
+          </p>
+        </div>
       </div>
+      {/* Добавляем перенос только на мобильных устройствах */}
+      {i === 4 && (
+        <div className="w-full block sm:hidden" /> // Скрываем перенос на больших экранах
+      )}
+    </React.Fragment>
+  ))}
+</div>
+
     </div>
   );
 };
