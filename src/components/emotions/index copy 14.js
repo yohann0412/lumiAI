@@ -9,52 +9,25 @@ const EmotionVisualizer = ({ emotions }) => {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true });
 
   const colors = [
-    "#0A0F1E",
-    "#1C253C",
-    "#39475F",
-    "#64778B",
-    "#8FA6B7",
-    "#20C4F4",
-    "#00D8A9",
-    "#66E5B3",
-    "#B6D6E2",
+    "#A9D6E5",
+    "#90E0EF",
+    "#CAF0F8",
+    "#ADE8F4",
+    "#D9ED92",
+    "#B5E48C",
+    "#76C893",
+    "#34A0A4",
+    "#168AAD",
+    "#1A759F",
+    "#184E77",
+    "#DDE5B6",
+    "#F9DCC4",
+    "#E8A598",
+    "#F4BFBF",
+    "#B8C0FF",
+    "#D6A2E8",
+    "#E2C2CF",
   ];
-
-  // const colors = [
-  //   "#111827",
-  //   "#1E293B",
-  //   "#2D3748",
-  //   "#4B5563",
-  //   "#9CA3AF",
-  //   "#10B981",
-  //   "#3B82F6",
-  //   "#818CF8",
-  //   "#0EA5E9",
-  // ];
-
-  // const colors = [
-  //   "#0E131C",
-  //   "#1D2430",
-  //   "#2D3644",
-  //   "#404B5C",
-  //   "#64748B",
-  //   "#06B6D4",
-  //   "#3B82F6",
-  //   "#9333EA",
-  //   "#D946EF",
-  // ];
-
-  // const colors = [
-  //   "#111827",
-  //   "#1E293B",
-  //   "#334155",
-  //   "#475569",
-  //   "#64748B",
-  //   "#0EA5E9",
-  //   "#06B6D4",
-  //   "#818CF8",
-  //   "#A78BFA",
-  // ];
 
   const totalMessages = Object.values(emotions).reduce(
     (acc, count) => acc + count,
@@ -68,7 +41,7 @@ const EmotionVisualizer = ({ emotions }) => {
   }));
 
   return (
-    <div ref={ref} className="p-6 rounded-xl shadow-lg overflow-hidden">
+    <div ref={ref} className="p-6 rounded-xl shadow-lg bg-white overflow-hidden">
       <div className="w-full text-center mb-6">
         <p className="text-lg font-semibold text-gray-800">
           I am feeling {data[0]?.name || "unsure"} today
@@ -99,34 +72,29 @@ const EmotionVisualizer = ({ emotions }) => {
         </ResponsiveContainer>
       </div>
 
-      <div className="flex flex-wrap justify-center items-start">
+      <div className="flex flex-wrap justify-center items-end">
         {data.map(({ name, value, color }) => (
           <div
             key={name}
             className="flex flex-col items-center mx-2"
             style={{ margin: "0 4px" }}
           >
-            <div className="w-12 bg-white h-4">
-              <div
-                className=" rounded-md h-4"
-                style={{
-                  backgroundColor: color,
-                  width: `${(value / totalMessages) * 120}px`,
-                }}
-              ></div>
-            </div>
-            <div>
-              <div
-                className="w-12 rounded-b-md"
-
+            <div className="h-[50px] bg-gray-100 rounded-md flex items-end">
+              <motion.div
+                className="w-4 rounded-b-md"
+                style={{ backgroundColor: color }}
+                initial={{ height: 0 }}
+                animate={inView ? { height: `${(value / totalMessages) * 120}px` } : { height: 0 }}
+                transition={{ type: "spring", stiffness: 100, damping: 15 }}
+                title={`${name}: ${Math.round((value / totalMessages) * 100)}%`}
               />
-              <p className="text-xs font-medium text-gray-700 mt-2 text-center">
-                {name}
-              </p>
-              <p className="text-xs font-normal text-gray-500 mt-1 text-center">
-                {Math.round((value / totalMessages) * 100)}%
-              </p>
             </div>
+            <p className="text-xs font-medium text-gray-700 mt-1 text-center">
+              {name}
+            </p>
+            <p className="text-xs font-normal text-gray-500 mt-0.5">
+              {Math.round((value / totalMessages) * 100)}%
+            </p>
           </div>
         ))}
       </div>
