@@ -77,8 +77,48 @@ const bubbles = [
     delay: 2.75,
     mobilePosition: { top: "70%", left: "14%" },
   },
+  
 
   // 3
+];
+
+const gsapTitle = [
+  "T",
+  "h",
+  "e",
+  " ",
+  "A",
+  "I",
+  " ",
+  "T",
+  "h",
+  "a",
+  "t",
+  " ",
+  "T",
+  "h",
+  "i",
+  "n",
+  "k",
+  "s",
+  " ",
+  "A",
+  "l",
+  "o",
+  "n",
+  "g",
+  " ",
+  "S",
+  "i",
+  "d",
+  "e",
+  " ",
+  "U",
+  "s",
+  " ",
+  "A",
+  "l",
+  "l",
 ];
 
 const Hero = () => {
@@ -235,7 +275,7 @@ const Hero = () => {
           .fromTo(
             mobileFrameRef.current.querySelector(".bubbles-mobile"),
             { opacity: 0, y: 50, zIndex: 0 },
-            { opacity: 1, y: 0, zIndex: 5, duration: 1 },
+            { opacity: 1, y: 0, zIndex:5, duration: 1 },
             "+=0.5"
           )
           .fromTo(
@@ -322,8 +362,6 @@ const Hero = () => {
             autoPlay
             loop
             muted
-            playsInline
-            webkit-playsinline
             className="w-full h-auto"
           />
         </div>
@@ -427,6 +465,7 @@ const Hero = () => {
       </div>
     </div>
   );
+
 };
 
 export default Hero;
