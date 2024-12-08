@@ -82,7 +82,44 @@ const bubbles = [
   // 3
 ];
 
-
+const gsapTitle = [
+  "T",
+  "h",
+  "e",
+  " ",
+  "A",
+  "I",
+  " ",
+  "T",
+  "h",
+  "a",
+  "t",
+  " ",
+  "T",
+  "h",
+  "i",
+  "n",
+  "k",
+  "s",
+  " ",
+  "A",
+  "l",
+  "o",
+  "n",
+  "g",
+  " ",
+  "S",
+  "i",
+  "d",
+  "e",
+  " ",
+  "U",
+  "s",
+  " ",
+  "A",
+  "l",
+  "l",
+];
 
 const Hero = () => {
   const [Lottie, setLottie] = useState(null);
@@ -362,6 +399,72 @@ const Hero = () => {
       </div>
     );
   }
+
+  return (
+    // <div className="min-h-screen">
+    <div className="">
+      <div
+        ref={firstFrameRef}
+        className="z-10 relative flex flex-col items-center justify-center text-center text-black min-h-screen max-h-screen overflow-hidden "
+      >
+        {/* <div className="box w-full bg-white mt-4">
+          <Lottie animationData={animationData} loop={true} />
+        </div> */}
+        <div className="box w-full bg-white mt-4">
+          <video
+            src="/Horizontal.mp4"
+            autoPlay
+            loop
+            muted
+            className="w-full h-auto"
+          />
+        </div>
+
+        <div className="bubbles absolute top-0 right-0 z-10 w-full h-[400px] mt-[10px] opacity-0">
+          {bubbles.map((bubble, index) => (
+            <div
+              key={index}
+              ref={(el) => (bubblesRef.current[index] = el)}
+              className="absolute"
+              style={bubble.position}
+            >
+              <Bubble
+                imageSrc={bubble.imageSrc}
+                text={bubble.text}
+                type={bubble.type}
+              />
+            </div>
+          ))}
+        </div>
+        <div ref={contentRef} className="absolute bottom-0">
+          {/* <div className="action-button top-[-30px] left-1/2 transform -translate-x-1/2 p-1 rounded-sm opacity-0"> */}
+          <div className="action-button top-[-30px] p-1 rounded-sm opacity-0">
+            <Button className="chat-button px-9 py-6 text-white rounded-sm">
+              <Image
+                src="/icons/ChatTeardrop.svg"
+                alt="Coin Vertical Logo"
+                width={20}
+                height={20}
+              />
+              CHAT NOW
+            </Button>
+          </div>
+          <h1 className="call-title gsap-title text-4xl uppercase font-bold mb-2 pt-10 py-24 opacity-0">
+            {gsapTitle.map((letter, index) => (
+              <span
+                key={index}
+                ref={(el) => (lettersRef.current[index] = el)}
+                className="inline-block text-cblack-100"
+                style={{ whiteSpace: "pre" }}
+              >
+                {letter}
+              </span>
+            ))}
+          </h1>
+        </div>
+      </div>
+    </div>
+  );
 
 };
 
