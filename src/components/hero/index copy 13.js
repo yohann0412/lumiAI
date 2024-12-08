@@ -18,7 +18,7 @@ const bubbles = [
     text: "Happiness",
     type: "left",
     position: { top: "35%", left: "10%" },
-    mobilePosition: { top: "62%", left: "10%" },
+    mobilePosition: { top: "52%", left: "10%" },
     delay: 0.5,
   },
   {
@@ -26,7 +26,8 @@ const bubbles = [
     text: "Delight",
     type: "right",
     position: { top: "40%", right: "15%" },
-    mobilePosition: { top: "62%", right: "10%" },
+    mobilePosition: { top: "52%", right: "10%" },
+
     delay: 0.5,
   },
   {
@@ -34,7 +35,8 @@ const bubbles = [
     text: "Love",
     type: "right",
     position: { top: "80%", right: "25%" },
-    mobilePosition: { top: "67%", right: "25%" },
+    mobilePosition: { top: "57%", right: "25%" },
+
     delay: 0.75,
   },
   {
@@ -42,16 +44,17 @@ const bubbles = [
     text: "Tenderness",
     type: "left",
     position: { top: "90%", left: "15%" },
-    mobilePosition: { top: "69%", left: "14%" },
+    mobilePosition: { top: "59%", left: "14%" },
     delay: 1,
   },
+  // 2
   {
     imageSrc: "/icons/SmileySad.svg",
     text: "Sadness",
     type: "left",
     position: { top: "45%", left: "12%" },
     delay: 2.25,
-    mobilePosition: { top: "63%", left: "26%" },
+    mobilePosition: { top: "53%", left: "26%" },
   },
   {
     imageSrc: "/icons/Drop.svg",
@@ -59,7 +62,7 @@ const bubbles = [
     type: "left",
     position: { top: "80%", left: "18%" },
     delay: 2.25,
-    mobilePosition: { top: "64%", right: "8%" },
+    mobilePosition: { top: "54%", right: "8%" },
   },
   {
     imageSrc: "/icons/Cloud.svg",
@@ -67,7 +70,7 @@ const bubbles = [
     type: "right",
     position: { top: "50%", right: "18%" },
     delay: 2.5,
-    mobilePosition: { top: "67%", right: "29%" },
+    mobilePosition: { top: "57%", right: "29%" },
   },
   {
     imageSrc: "/icons/PersonSimpleWalk.svg",
@@ -75,14 +78,232 @@ const bubbles = [
     type: "right",
     position: { top: "60%", right: "25%" },
     delay: 2.75,
-    mobilePosition: { top: "70%", left: "14%" },
+    mobilePosition: { top: "60%", left: "14%" },
   },
-  
 
   // 3
+  {
+    imageSrc: "/icons/SmileyNervous.svg",
+    text: "Anxiety",
+    type: "left",
+    position: { top: "29%", left: "19%" },
+    delay: 3.25,
+    mobilePosition: { top: "52%", left: "27%" },
+  },
+  {
+    imageSrc: "/icons/Ghost.svg",
+    text: "Fear",
+    type: "right",
+    position: { top: "30%", right: "20%" },
+    delay: 3.25,
+    mobilePosition: { top: "52%", right: "10%" },
+  },
+  {
+    imageSrc: "/icons/SmileyAngry.svg",
+    text: "Angry",
+    type: "right",
+    position: { top: "70%", right: "22%" },
+    delay: 3.5,
+    mobilePosition: { top: "57%", right: "25%" },
+  },
+  {
+    imageSrc: "/icons/SealQuestion.svg",
+    text: "Uncertainty",
+    type: "left",
+    position: { top: "70%", left: "20%" },
+    delay: 3.5,
+    mobilePosition: { top: "59%", left: "10%" },
+  },
+  // 4
+  {
+    imageSrc: "/icons/SmileyAngry.svg",
+    text: "Anger",
+    type: "left",
+    position: { top: "40%", left: "10%" },
+    delay: 4.25,
+    mobilePosition: { top: "52%", left: "10%" },
+  },
+  {
+    imageSrc: "/icons/UserMinus.svg",
+    text: "Intolerance",
+    type: "left",
+    position: { top: "95%", left: "20%" },
+    delay: 4.5,
+    mobilePosition: { top: "52%", right: "10%" },
+  },
+  {
+    imageSrc: "/icons/HandFist.svg",
+    text: "Aggression",
+    type: "right",
+    position: { top: "60%", right: "28%" },
+    delay: 4.75,
+    mobilePosition: { top: "57%", right: "25%" },
+  },
+  {
+    imageSrc: "/icons/SmileySad.svg",
+    text: "Disappointment",
+    type: "right",
+    position: { top: "45%", right: "18%" },
+    delay: 5.0,
+    mobilePosition: { top: "59%", left: "14%" },
+  },
+
+  // // 5
+  // {
+  //   imageSrc: "/icons/SmileyXEyes.svg",
+  //   text: "Guilt",
+  //   type: "right",
+  //   position: { top: "35%", right: "22%" },
+  //   delay: 5.25,
+  // },
+  // {
+  //   imageSrc: "/icons/Gavel.svg",
+  //   text: "Remorse",
+  //   type: "left",
+  //   position: { top: "40%", left: "10%" },
+  //   delay: 5.5,
+  // },
+  // {
+  //   imageSrc: "/icons/SmileyMelting.svg",
+  //   text: "Shame",
+  //   type: "left",
+  //   position: { top: "75%", left: "15%" },
+  //   delay: 5.75,
+  // },
+  // {
+  //   imageSrc: "/icons/WechatLogo.svg",
+  //   text: "Self-criticism",
+  //   type: "right",
+  //   position: { top: "60%", right: "25%" },
+  //   delay: 6.0,
+  // },
+  // // 6
+  // {
+  //   imageSrc: "/icons/MaskHappy.svg",
+  //   text: "Relaxation",
+  //   type: "left",
+  //   position: { top: "30%", left: "10%" },
+  //   delay: 6.25,
+  // },
+  // {
+  //   imageSrc: "/icons/FlowerLotus.svg",
+  //   text: "Tranquility",
+  //   type: "right",
+  //   position: { top: "45%", right: "18%" },
+  //   delay: 6.5,
+  // },
+  // {
+  //   imageSrc: "/icons/FlowerLotus.svg",
+  //   text: "Tranquility",
+  //   type: "left",
+  //   position: { top: "65%", left: "5%" },
+  //   delay: 6.75,
+  // },
+  // {
+  //   imageSrc: "/icons/Clover.svg",
+  //   text: "Serenity",
+  //   type: "right",
+  //   position: { top: "65%", right: "22%" },
+  //   delay: 7.0,
+  // },
+  // // 7
+  // {
+  //   imageSrc: "/icons/SmileyWink.svg",
+  //   text: "Excited",
+  //   type: "left",
+  //   position: { top: "24%", left: "8%" },
+  //   delay: 7.25,
+  // },
+  // {
+  //   imageSrc: "/icons/SmileyWink.svg",
+  //   text: "Interest",
+  //   type: "right",
+  //   position: { top: "40%", right: "18%" },
+  //   delay: 7.5,
+  // },
+  // {
+  //   imageSrc: "/icons/Lightning.svg",
+  //   text: "Energy",
+  //   type: "right",
+  //   position: { top: "76%", right: "14%" },
+  //   delay: 7.75,
+  // },
+  // {
+  //   imageSrc: "/icons/MagnifyingGlass.svg",
+  //   text: "Curiosity",
+  //   type: "left",
+  //   position: { top: "70%", left: "15%" },
+  //   delay: 8.0,
+  // },
+  // // 8
+  // {
+  //   imageSrc: "/icons/SmileyMeh.svg",
+  //   text: "Boring",
+  //   type: "left",
+  //   position: { top: "25%", left: "10%" },
+  //   delay: 8.25,
+  // },
+  // {
+  //   imageSrc: "/icons/SmileyMeh.svg",
+  //   text: "Indifference",
+  //   type: "right",
+  //   position: { top: "40%", right: "12%" },
+  //   delay: 8.5,
+  // },
+  // {
+  //   imageSrc: "/icons/BatteryLow.svg",
+  //   text: "Apathy",
+  //   type: "left",
+  //   position: { top: "90%", left: "14%" },
+  //   delay: 8.75,
+  // },
+  // {
+  //   imageSrc: "/icons/SmileyNervous.svg",
+  //   text: "Despondency",
+  //   type: "right",
+  //   position: { top: "65%", right: "15%" },
+  //   delay: 9.0,
+  // },
 ];
 
-
+const gsapTitle = [
+  "T",
+  "h",
+  "e",
+  " ",
+  "A",
+  "I",
+  " ",
+  "T",
+  "h",
+  "a",
+  "t",
+  " ",
+  "T",
+  "h",
+  "i",
+  "n",
+  "k",
+  "s",
+  " ",
+  "A",
+  "l",
+  "o",
+  "n",
+  "g",
+  " ",
+  "S",
+  "i",
+  "d",
+  "e",
+  " ",
+  "U",
+  "s",
+  " ",
+  "A",
+  "l",
+  "l",
+];
 
 const Hero = () => {
   const [Lottie, setLottie] = useState(null);
@@ -237,8 +458,8 @@ const Hero = () => {
           )
           .fromTo(
             mobileFrameRef.current.querySelector(".bubbles-mobile"),
-            { opacity: 0, y: 50, zIndex: 0 },
-            { opacity: 1, y: 0, zIndex:5, duration: 1 },
+            { opacity: 0, y: 50 },
+            { opacity: 1, y: 0, duration: 1 },
             "+=0.5"
           )
           .fromTo(
@@ -295,6 +516,9 @@ const Hero = () => {
     }
   }, [Lottie, isMobile]);
 
+  // if (!Lottie) {
+  //   return <div className="min-h-screen w-full bg-red-600">Loading...</div>;
+  // }
   if (!Lottie) {
     return (
       <div className="min-h-screen w-full flex items-center justify-center">
@@ -319,6 +543,9 @@ const Hero = () => {
         ref={mobileFrameRef}
         className="w-full h-screen flex flex-col justify-center items-center pb-7"
       >
+        {/* <div className="mobilebox">
+          <Lottie animationData={animationData} loop={true} />
+        </div> */}
         <div className="mobilebox">
           <video
             src="/Mobile.mp4"
@@ -329,7 +556,7 @@ const Hero = () => {
           />
         </div>
 
-        <div className="bubbles-mobile w-full opacity-0 z-40 h-screen ">
+        <div className="bubbles-mobile w-full opacity-0 z-40">
           {bubbles.map((bubble, index) => (
             <Bubble
               key={index}
@@ -363,6 +590,71 @@ const Hero = () => {
     );
   }
 
+  return (
+    // <div className="min-h-screen">
+    <div className="">
+      <div
+        ref={firstFrameRef}
+        className="z-10 relative flex flex-col items-center justify-center text-center text-black min-h-screen max-h-screen overflow-hidden "
+      >
+        {/* <div className="box w-full bg-white mt-4">
+          <Lottie animationData={animationData} loop={true} />
+        </div> */}
+        <div className="box w-full bg-white mt-4">
+          <video
+            src="/Horizontal.mp4"
+            autoPlay
+            loop
+            muted
+            className="w-full h-auto"
+          />
+        </div>
+
+        <div className="bubbles absolute top-0 right-0 z-10 w-full h-[400px] mt-[10px] opacity-0">
+          {bubbles.map((bubble, index) => (
+            <div
+              key={index}
+              ref={(el) => (bubblesRef.current[index] = el)}
+              className="absolute"
+              style={bubble.position}
+            >
+              <Bubble
+                imageSrc={bubble.imageSrc}
+                text={bubble.text}
+                type={bubble.type}
+              />
+            </div>
+          ))}
+        </div>
+        <div ref={contentRef} className="absolute bottom-0">
+          {/* <div className="action-button top-[-30px] left-1/2 transform -translate-x-1/2 p-1 rounded-sm opacity-0"> */}
+          <div className="action-button top-[-30px] p-1 rounded-sm opacity-0">
+            <Button className="chat-button px-9 py-6 text-white rounded-sm">
+              <Image
+                src="/icons/ChatTeardrop.svg"
+                alt="Coin Vertical Logo"
+                width={20}
+                height={20}
+              />
+              CHAT NOW
+            </Button>
+          </div>
+          <h1 className="call-title gsap-title text-4xl uppercase font-bold mb-2 pt-10 py-24 opacity-0">
+            {gsapTitle.map((letter, index) => (
+              <span
+                key={index}
+                ref={(el) => (lettersRef.current[index] = el)}
+                className="inline-block text-cblack-100"
+                style={{ whiteSpace: "pre" }}
+              >
+                {letter}
+              </span>
+            ))}
+          </h1>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Hero;
