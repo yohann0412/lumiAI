@@ -188,13 +188,18 @@ body {
 }
 
 .bubbles-mobile {
-  position: absolute; /* или relative в зависимости от контекста */
+  position: absolute; 
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Если нужно поместить за другими элементами */
-  display: flex; /* Если хотите управлять расположением элементов */
-  justify-content: center; /* Настройте, чтобы расположить элементы по центру */
+  z-index: -1; 
+  display: flex; 
+  justify-content: center;
   align-items: center;
+}
+
+
+.recharts-wrapper :focus {
+  outline: none !important;
 }

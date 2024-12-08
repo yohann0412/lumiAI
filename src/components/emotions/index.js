@@ -89,11 +89,13 @@ const EmotionVisualizer = ({ emotions }) => {
               animationBegin={0}
               animationDuration={2000}
               animationEasing="ease-out"
+              tabIndex={-1}
             >
               {data.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={entry.color} />
+                <Cell key={`cell-${index}`} fill={entry.color} tabIndex={-1} />
               ))}
             </Pie>
+
             <Tooltip />
           </PieChart>
         </ResponsiveContainer>
