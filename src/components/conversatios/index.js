@@ -80,7 +80,7 @@ const Conversations = () => {
     <div
       ref={containerRef}
       onScroll={handleScroll}
-      className="w-full max-h-[62vh] bg-wild-100 overflow-scroll relative"
+      className="w-full  bg-wild-100 overflow-scroll relative"
     >
       <div
         className={`py-4 bg-wild-100 sticky top-0 z-10 transition-shadow duration-300 ${
