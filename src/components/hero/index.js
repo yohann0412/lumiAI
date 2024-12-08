@@ -226,11 +226,12 @@ const Hero = () => {
         <div className="mobilebox">
           <video
             src="/Mobile.mp4"
-            playsInline
             loop
             muted
+            playsInline
             className="w-full h-auto"
-          />
+            onLoadedData={(e) => e.target.play()}
+          ></video>
         </div>
 
         <div className="bubbles-mobile w-full opacity-0 z-40 h-screen ">
