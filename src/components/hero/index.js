@@ -77,7 +77,6 @@ const bubbles = [
     delay: 2.75,
     mobilePosition: { top: "70%", left: "14%" },
   },
-  
 
   // 3
 ];
@@ -275,7 +274,7 @@ const Hero = () => {
           .fromTo(
             mobileFrameRef.current.querySelector(".bubbles-mobile"),
             { opacity: 0, y: 50, zIndex: 0 },
-            { opacity: 1, y: 0, zIndex:5, duration: 1 },
+            { opacity: 1, y: 0, zIndex: 5, duration: 1 },
             "+=0.5"
           )
           .fromTo(
@@ -380,9 +379,9 @@ const Hero = () => {
           ))}
         </div>
 
-        <div className="relative flex flex-col items-center justify-center">
+        <div className="relative flex flex-col items-center justify-center transform -translate-y-8">
           <h1 className="mobile-title text-cblack-100 text-2xl font-bold opacity-0 text-center px-5">
-            The AI That Thinks Along Side Us All
+            <span className="gradient-text">The AI</span> <br></br> That Thinks Along Side Us All
           </h1>
           <div className="mobile-button top-[-5px]  p-1 rounded-sm opacity-0">
             <Button className="chat-button px-9 py-6 text-white rounded-sm">
@@ -465,7 +464,6 @@ const Hero = () => {
       </div>
     </div>
   );
-
 };
 
 export default Hero;

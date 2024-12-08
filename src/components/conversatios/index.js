@@ -87,7 +87,7 @@ const Conversations = () => {
           isScrolled ? "shadow-md" : ""
         }`}
       >
-        <h2 className="text-xl text-cblack-100 text-center">Recent Tweets</h2>
+        <h2 className="text-4xl text-cblack-100 text-center font-medium ">Recent Tweets</h2>
       </div>
 
       <div className="px-4 md:px-12 border-t-2">
