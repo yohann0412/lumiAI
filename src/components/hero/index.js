@@ -357,10 +357,17 @@ const Hero = () => {
       >
         <div className="mobilebox">
           <video
+            // src="/Mobile.mp4"
+            // autoPlay
+            // loop
+            // muted
+            // className="w-full h-auto"
             src="/Mobile.mp4"
             autoPlay
             loop
             muted
+            playsInline
+            webkit-playsinline
             className="w-full h-auto"
           />
         </div>
