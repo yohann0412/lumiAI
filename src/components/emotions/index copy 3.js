@@ -7,6 +7,7 @@ import { useInView } from "react-intersection-observer";
 const EmotionVisualizer = ({ emotions }) => {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true });
 
+
   const colors = [
     "#111827",
     "#1E293B",
@@ -19,27 +20,24 @@ const EmotionVisualizer = ({ emotions }) => {
     "#0EA5E9",
   ];
 
-  const normalizeEmotions = (emotions) => {
-    const total = Object.values(emotions).reduce(
-      (sum, value) => sum + value,
-      0
-    );
-    return Object.entries(emotions).map(([emotion, value], index) => ({
-      name: emotion,
-      value: value,
-      percentage: Math.round((value / total) * 100),
-      color: colors[index % colors.length],
-    }));
-  };
-
-  const data = normalizeEmotions(emotions);
   const totalMessages = Object.values(emotions).reduce(
-    (sum, value) => sum + value,
+    (acc, count) => acc + count,
     0
   );
 
+  const data = Object.keys(emotions).map((emotion, index) => ({
+    name: emotion,
+    value: emotions[emotion],
+    color: colors[index % colors.length],
+  }));
+
   return (
     <div ref={ref} className="py-28 px-4 rounded-xl shadow-lg overflow-hidden">
+      <div className="w-full text-center mb-6">
+        <p className="text-lg font-semibold text-gray-800">
+          I am feeling {data[0]?.name || "unsure"} today
+        </p>
+      </div>
       <div className="w-full h-[250px] mb-6">
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
@@ -49,7 +47,7 @@ const EmotionVisualizer = ({ emotions }) => {
               cy="50%"
               outerRadius={80}
               innerRadius={50}
-              dataKey="percentage"
+              dataKey="value"
               label={({ name }) => name}
               isAnimationActive={inView}
               animationBegin={0}
@@ -61,6 +59,7 @@ const EmotionVisualizer = ({ emotions }) => {
                 <Cell key={`cell-${index}`} fill={entry.color} tabIndex={-1} />
               ))}
             </Pie>
+
             <Tooltip />
           </PieChart>
         </ResponsiveContainer>
@@ -102,9 +101,9 @@ const EmotionVisualizer = ({ emotions }) => {
                   </p>
                 </div>
               </div>
-              <div className="w-full">
+              <div className="w-full text-center">
                 <p className="text-xs font-normal text-gray-500 mt-1">
-                  {value}
+                  
                 </p>
               </div>
             </div>
