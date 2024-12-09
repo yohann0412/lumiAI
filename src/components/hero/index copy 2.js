@@ -12,138 +12,24 @@ import { Button } from "../ui/button";
 import animationData from "../../../public/lottie.json";
 import Bubble from "../bubble";
 
+
 const bubbles = [
   {
     imageSrc: "/icons/Smiley.svg",
     text: "Happiness",
     type: "left",
-    position: { top: "65px", right: "260px" },
-    mobilePosition: { top: "65px", right: "160px" },
+    position: { top: "35%", left: "0%" }, 
+    mobilePosition: { top: "62%", left: "0%" },
     delay: 0.5,
   },
   {
     imageSrc: "/icons/Sparkle.svg",
     text: "Delight",
     type: "right",
-    position: { top: "65px", right: "-120px" },
-    mobilePosition: { top: "65px", right: "-20px" },
+    position: { top: "-20%", left: "30%" },
+    mobilePosition: { top: "62%", right: "10%" },
     delay: 0.5,
   },
-  {
-    imageSrc: "/icons/Heart.svg",
-    text: "Love",
-    type: "left",
-    position: { top: "-15px", right: "280px" },
-    mobilePosition: { top: "15px", right: "160px" },
-    delay: 0.75,
-  },
-  {
-    imageSrc: "/icons/HandHeart.svg",
-    text: "Tenderness",
-    type: "right",
-    position: { top: "-15px", right: "-160px" },
-    mobilePosition: { top: "5px", right: "-60px" },
-    delay: 1,
-  },
-  // // 2
-  {
-    imageSrc: "/icons/SmileySad.svg",
-    text: "Sadness",
-    type: "left",
-    position: { top: "100px", right: "260px" },
-    mobilePosition: { top: "65px", right: "160px" },
-    delay: 2.25,
-  },
-  {
-    imageSrc: "/icons/Drop.svg",
-    text: "Melancholy",
-    type: "right",
-    position: { top: "100px", right: "-120px" },
-    mobilePosition: { top: "65px", right: "-60px" },
-    delay: 2.5,
-  },
-  {
-    imageSrc: "/icons/Cloud.svg",
-    text: "Nostalgia",
-    type: "left",
-    position: { top: "20px", right: "280px" },
-    mobilePosition: { top: "15px", right: "190px" },
-    delay: 2.75,
-  },
-  {
-    imageSrc: "/icons/PersonSimpleWalk.svg",
-    text: "Loneliness",
-    type: "right",
-    position: { top: "20px", right: "-160px" },
-    mobilePosition: { top: "5px", right: "-60px" },
-    delay: 3,
-  },
-  // // // 3
-  {
-    imageSrc: "/icons/SmileyNervous.svg",
-    text: "Anxiety",
-    type: "left",
-    position: { top: "75px", right: "260px" },
-    mobilePosition: { top: "65px", right: "160px" },
-    delay: 3.25,
-  },
-  {
-    imageSrc: "/icons/Ghost.svg",
-    text: "Fear",
-    type: "right",
-    position: { top: "75px", right: "-120px" },
-    mobilePosition: { top: "65px", right: "-60px" },
-    delay: 3.25,
-  },
-  {
-    imageSrc: "/icons/SmileyAngry.svg",
-    text: "Angry",
-    type: "left",
-    position: { top: "-25px", right: "280px" },
-    mobilePosition: { top: "15px", right: "190px" },
-    delay: 3.5,
-  },
-  {
-    imageSrc: "/icons/SealQuestion.svg",
-    text: "Uncertainty",
-    type: "right",
-    position: { top: "-25px", right: "-160px" },
-    mobilePosition: { top: "5px", right: "-60px" },
-    delay: 3.5,
-  },
-  // // // 4
-  // {
-  //   imageSrc: "/icons/SmileyAngry.svg",
-  //   text: "Anger",
-  //   type: "left",
-  //   position: { top: "50px", right: "240px" },
-  //   mobilePosition: { top: "62%", left: "0%" },
-  //   delay: 4.25,
-  // },
-  // {
-  //   imageSrc: "/icons/UserMinus.svg",
-  //   text: "Intolerance",
-  //   type: "right",
-  //   position: { top: "45px", right: "-110px" },
-  //   mobilePosition: { top: "62%", left: "0%" },
-  //   delay: 4.5,
-  // },
-  // {
-  //   imageSrc: "/icons/HandFist.svg",
-  //   text: "Aggression",
-  //   type: "left",
-  //   position: { top: "-35px", right: "310px" },
-  //   mobilePosition: { top: "62%", left: "0%" },
-  //   delay: 4.75,
-  // },
-  // {
-  //   imageSrc: "/icons/SmileySad.svg",
-  //   text: "Disappointment",
-  //   type: "right",
-  //   position: { top: "-45px", right: "-140px" },
-  //   mobilePosition: { top: "62%", left: "0%" },
-  //   delay: 5.0,
-  // },
 ];
 
 // const bubbles = [
@@ -445,7 +331,7 @@ const Hero = () => {
               { opacity: 0, scale: 0 },
               {
                 opacity: 1,
-                scale: 1.2,
+                scale: 0.7,
                 duration: 1.25,
                 ease: "back.out(1.7)",
               },
@@ -487,7 +373,7 @@ const Hero = () => {
     return (
       <div
         ref={mobileFrameRef}
-        className="realative w-full h-screen flex flex-col justify-center items-center pb-7"
+        className="w-full h-screen flex flex-col justify-center items-center pb-7"
       >
         <div className="mobilebox">
           <video
@@ -506,7 +392,7 @@ const Hero = () => {
           />
         </div>
 
-        {/* <div className="bubbles-mobile w-full opacity-0 z-40 h-screen ">
+        <div className="bubbles-mobile w-full opacity-0 z-40 h-screen ">
           {bubbles.map((bubble, index) => (
             <Bubble
               key={index}
@@ -518,33 +404,12 @@ const Hero = () => {
               delay={bubble.delay}
             />
           ))}
-        </div> */}
-        <div
-          className="bubbles-mobile absolute top-1/2 left-1/2 z-10 w-[10px] h-[4px]  opacity-0"
-          style={{ transform: "translate(-50%, -50%)" }}
-        >
-          {bubbles.map((bubble, index) => (
-            <div
-              key={index}
-              ref={(el) => (mobileBubblesRef.current[index] = el)}
-              className="absolute"
-              style={bubble.mobilePosition}
-            >
-              <Bubble
-                key={index}
-                imageSrc={bubble.imageSrc}
-                text={bubble.text}
-                type={bubble.type}
-                // position={bubble.mobilePosition}
-              />
-            </div>
-          ))}
         </div>
 
-        <div className="relative flex flex-col items-center justify-center transform translate-y-8 gap-6">
+        <div className="relative flex flex-col items-center justify-center transform -translate-y-8">
           <h1 className="mobile-title text-cblack-100 text-2xl font-bold opacity-0 text-center px-5">
-            <span className="gradient-text text-4xl">The AI</span> <br></br>{" "}
-            That Thinks Along Side Us All
+            <span className="gradient-text">The AI</span> <br></br> That Thinks
+            Along Side Us All
           </h1>
           <div className="mobile-button top-[-5px]  p-1 rounded-sm opacity-0">
             <Button className="chat-button px-9 py-6 text-white rounded-sm">
@@ -563,11 +428,15 @@ const Hero = () => {
   }
 
   return (
+    // <div className="min-h-screen">
     <div className="">
       <div
         ref={firstFrameRef}
         className="z-10 relative flex flex-col items-center justify-center text-center text-black min-h-screen max-h-screen overflow-hidden "
       >
+        {/* <div className="box w-full bg-white mt-4">
+          <Lottie animationData={animationData} loop={true} />
+        </div> */}
         <div className="box w-full bg-white mt-4">
           <video
             src="/Horizontal.mp4"
@@ -577,10 +446,8 @@ const Hero = () => {
             className="w-full h-auto"
           />
         </div>
-        <div
-          className="bubbles absolute top-1/2 left-1/2 z-10 w-[10px] h-[4px] bg-red-600  opacity-0"
-          style={{ transform: "translate(-50%, -50%)" }}
-        >
+
+        <div className="bubbles absolute top-0 right-0 z-10 w-full h-[400px] mt-[10px] opacity-0">
           {bubbles.map((bubble, index) => (
             <div
               key={index}
@@ -589,18 +456,15 @@ const Hero = () => {
               style={bubble.position}
             >
               <Bubble
-                key={index}
                 imageSrc={bubble.imageSrc}
                 text={bubble.text}
                 type={bubble.type}
-                // position={bubble.position}
-                className="bubble-animation"
               />
             </div>
           ))}
         </div>
-
         <div ref={contentRef} className="absolute bottom-0">
+          {/* <div className="action-button top-[-30px] left-1/2 transform -translate-x-1/2 p-1 rounded-sm opacity-0"> */}
           <div className="action-button top-[-30px] p-1 rounded-sm opacity-0">
             <a
               href="https://x.com/0xlumi"

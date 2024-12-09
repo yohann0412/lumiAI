@@ -18,7 +18,8 @@ const bubbles = [
     text: "Happiness",
     type: "left",
     position: { top: "65px", right: "260px" },
-    mobilePosition: { top: "65px", right: "160px" },
+    mobilePosition: { top: "65px", right: "260px" },
+    // mobilePosition: { top: "62%", left: "0%" },
     delay: 0.5,
   },
   {
@@ -26,7 +27,7 @@ const bubbles = [
     text: "Delight",
     type: "right",
     position: { top: "65px", right: "-120px" },
-    mobilePosition: { top: "65px", right: "-20px" },
+    mobilePosition: { top: "65px", right: "260px" },
     delay: 0.5,
   },
   {
@@ -34,7 +35,7 @@ const bubbles = [
     text: "Love",
     type: "left",
     position: { top: "-15px", right: "280px" },
-    mobilePosition: { top: "15px", right: "160px" },
+    mobilePosition: { top: "65px", right: "260px" },
     delay: 0.75,
   },
   {
@@ -42,75 +43,75 @@ const bubbles = [
     text: "Tenderness",
     type: "right",
     position: { top: "-15px", right: "-160px" },
-    mobilePosition: { top: "5px", right: "-60px" },
+    mobilePosition: { top: "65px", right: "260px" },
     delay: 1,
   },
   // // 2
-  {
-    imageSrc: "/icons/SmileySad.svg",
-    text: "Sadness",
-    type: "left",
-    position: { top: "100px", right: "260px" },
-    mobilePosition: { top: "65px", right: "160px" },
-    delay: 2.25,
-  },
-  {
-    imageSrc: "/icons/Drop.svg",
-    text: "Melancholy",
-    type: "right",
-    position: { top: "100px", right: "-120px" },
-    mobilePosition: { top: "65px", right: "-60px" },
-    delay: 2.5,
-  },
-  {
-    imageSrc: "/icons/Cloud.svg",
-    text: "Nostalgia",
-    type: "left",
-    position: { top: "20px", right: "280px" },
-    mobilePosition: { top: "15px", right: "190px" },
-    delay: 2.75,
-  },
-  {
-    imageSrc: "/icons/PersonSimpleWalk.svg",
-    text: "Loneliness",
-    type: "right",
-    position: { top: "20px", right: "-160px" },
-    mobilePosition: { top: "5px", right: "-60px" },
-    delay: 3,
-  },
+  // {
+  //   imageSrc: "/icons/SmileySad.svg",
+  //   text: "Sadness",
+  //   type: "left",
+  //   position: { top: "100px", right: "260px" },
+  //   mobilePosition: { top: "62%", left: "0%" },
+  //   delay: 2.25,
+  // },
+  // {
+  //   imageSrc: "/icons/Drop.svg",
+  //   text: "Melancholy",
+  //   type: "right",
+  //   position: { top: "100px", right: "-120px" },
+  //   mobilePosition: { top: "62%", left: "0%" },
+  //   delay: 2.5,
+  // },
+  // {
+  //   imageSrc: "/icons/Cloud.svg",
+  //   text: "Nostalgia",
+  //   type: "left",
+  //   position: { top: "20px", right: "280px" },
+  //   mobilePosition: { top: "62%", left: "0%" },
+  //   delay: 2.75,
+  // },
+  // {
+  //   imageSrc: "/icons/PersonSimpleWalk.svg",
+  //   text: "Loneliness",
+  //   type: "right",
+  //   position: { top: "20px", right: "-160px" },
+  //   mobilePosition: { top: "62%", left: "0%" },
+  //   delay: 3,
+  // },
   // // // 3
-  {
-    imageSrc: "/icons/SmileyNervous.svg",
-    text: "Anxiety",
-    type: "left",
-    position: { top: "75px", right: "260px" },
-    mobilePosition: { top: "65px", right: "160px" },
-    delay: 3.25,
-  },
-  {
-    imageSrc: "/icons/Ghost.svg",
-    text: "Fear",
-    type: "right",
-    position: { top: "75px", right: "-120px" },
-    mobilePosition: { top: "65px", right: "-60px" },
-    delay: 3.25,
-  },
-  {
-    imageSrc: "/icons/SmileyAngry.svg",
-    text: "Angry",
-    type: "left",
-    position: { top: "-25px", right: "280px" },
-    mobilePosition: { top: "15px", right: "190px" },
-    delay: 3.5,
-  },
-  {
-    imageSrc: "/icons/SealQuestion.svg",
-    text: "Uncertainty",
-    type: "right",
-    position: { top: "-25px", right: "-160px" },
-    mobilePosition: { top: "5px", right: "-60px" },
-    delay: 3.5,
-  },
+  // {
+  //   imageSrc: "/icons/SmileyNervous.svg",
+  //   text: "Anxiety",
+  //   type: "left",
+  //   position: { top: "75px", right: "260px" },
+  //   mobilePosition: { top: "62%", left: "0%" },
+  //   delay: 3.25,
+  // },
+  // {
+  //   imageSrc: "/icons/Ghost.svg",
+  //   text: "Fear",
+  //   type: "right",
+  //   position: { top: "75px", right: "-120px" },
+  //   mobilePosition: { top: "62%", left: "0%" },
+  //   delay: 3.25,
+  // },
+  // {
+  //   imageSrc: "/icons/SmileyAngry.svg",
+  //   text: "Angry",
+  //   type: "left",
+  //   position: { top: "-25px", right: "280px" },
+  //   mobilePosition: { top: "62%", left: "0%" },
+  //   delay: 3.5,
+  // },
+  // {
+  //   imageSrc: "/icons/SealQuestion.svg",
+  //   text: "Uncertainty",
+  //   type: "right",
+  //   position: { top: "-25px", right: "-160px" },
+  //   mobilePosition: { top: "62%", left: "0%" },
+  //   delay: 3.5,
+  // },
   // // // 4
   // {
   //   imageSrc: "/icons/SmileyAngry.svg",
@@ -445,7 +446,7 @@ const Hero = () => {
               { opacity: 0, scale: 0 },
               {
                 opacity: 1,
-                scale: 1.2,
+                scale: 1,
                 duration: 1.25,
                 ease: "back.out(1.7)",
               },
@@ -520,7 +521,7 @@ const Hero = () => {
           ))}
         </div> */}
         <div
-          className="bubbles-mobile absolute top-1/2 left-1/2 z-10 w-[10px] h-[4px]  opacity-0"
+          className="bubbles-mobile absolute top-1/2 left-1/2 z-10 w-[10px] h-[4px] bg-red-600  opacity-0"
           style={{ transform: "translate(-50%, -50%)" }}
         >
           {bubbles.map((bubble, index) => (
@@ -528,23 +529,24 @@ const Hero = () => {
               key={index}
               ref={(el) => (mobileBubblesRef.current[index] = el)}
               className="absolute"
-              style={bubble.mobilePosition}
+              style={bubble.position}
             >
               <Bubble
                 key={index}
                 imageSrc={bubble.imageSrc}
                 text={bubble.text}
                 type={bubble.type}
-                // position={bubble.mobilePosition}
+                position={bubble.mobilePosition}
+                // className="bubble-animation"
               />
             </div>
           ))}
         </div>
 
-        <div className="relative flex flex-col items-center justify-center transform translate-y-8 gap-6">
+        <div className="relative flex flex-col items-center justify-center transform -translate-y-8">
           <h1 className="mobile-title text-cblack-100 text-2xl font-bold opacity-0 text-center px-5">
-            <span className="gradient-text text-4xl">The AI</span> <br></br>{" "}
-            That Thinks Along Side Us All
+            <span className="gradient-text">The AI</span> <br></br> That Thinks
+            Along Side Us All
           </h1>
           <div className="mobile-button top-[-5px]  p-1 rounded-sm opacity-0">
             <Button className="chat-button px-9 py-6 text-white rounded-sm">
