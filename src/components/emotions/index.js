@@ -115,7 +115,7 @@ const EmotionVisualizer = ({ emotions }) => {
                 </p>
               </div>
             </div>
-            {i === 5 && <div className="w-full block sm:hidden" />}
+            {i === 4 && <div className="w-full block sm:hidden" />}
           </React.Fragment>
         ))}
       </div>
