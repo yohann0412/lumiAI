@@ -85,16 +85,17 @@ const EmotionVisualizer = ({ emotions }) => {
               <div className="flex items-end">
                 <div className="h-[50px] bg-white rounded-md flex items-end">
                   <div
-                    className="w-4 rounded-b-md"
+                    className={`w-4 ${
+                      value === 100 ? "rounded-md" : "rounded-b-md"
+                    }`}
                     style={{
                       backgroundColor: color,
-                      height: `${(value / data.reduce((sum, e) => sum + e.value, 0)) * 120}px`,
+                      height: `${(value / 100) * 50}px`,
                     }}
-                    title={`${name}: ${Math.round(
-                      (value / data.reduce((sum, e) => sum + e.value, 0)) * 100
-                    )}%`}
+                    title={`${name}: ${Math.round((value / 100) * 100)}%`}
                   />
                 </div>
+
                 <div className="flex flex-col items-center pl-1">
                   <p
                     className="text-xs font-medium text-gray-700 text-vertical"
@@ -114,7 +115,7 @@ const EmotionVisualizer = ({ emotions }) => {
                 </p>
               </div>
             </div>
-            {i === 4 && <div className="w-full block sm:hidden" />}
+            {i === 5 && <div className="w-full block sm:hidden" />}
           </React.Fragment>
         ))}
       </div>
