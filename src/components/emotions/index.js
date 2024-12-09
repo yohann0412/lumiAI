@@ -33,13 +33,19 @@ const EmotionVisualizer = ({ emotions }) => {
   };
 
   const data = normalizeEmotions(emotions);
-  const totalMessages = Object.values(emotions).reduce(
-    (sum, value) => sum + value,
-    0
+
+  const maxEmotion = data.reduce(
+    (max, emotion) => (emotion.value > max.value ? emotion : max),
+    { name: "", value: 0 }
   );
 
   return (
     <div ref={ref} className="py-28 px-4 rounded-xl shadow-lg overflow-hidden">
+      <div className="w-full text-center mb-6">
+        <h2 className="text-lg font-semibold text-gray-800">
+          I am feeling {maxEmotion.name} today
+        </h2>
+      </div>
       <div className="w-full h-[250px] mb-6">
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
@@ -82,10 +88,10 @@ const EmotionVisualizer = ({ emotions }) => {
                     className="w-4 rounded-b-md"
                     style={{
                       backgroundColor: color,
-                      height: `${(value / totalMessages) * 120}px`,
+                      height: `${(value / data.reduce((sum, e) => sum + e.value, 0)) * 120}px`,
                     }}
                     title={`${name}: ${Math.round(
-                      (value / totalMessages) * 100
+                      (value / data.reduce((sum, e) => sum + e.value, 0)) * 100
                     )}%`}
                   />
                 </div>
