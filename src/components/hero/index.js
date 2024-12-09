@@ -578,7 +578,7 @@ const Hero = () => {
           />
         </div>
         <div
-          className="bubbles absolute top-1/2 left-1/2 z-10 w-[10px] h-[4px] bg-red-600  opacity-0"
+          className="bubbles absolute top-1/2 left-1/2 z-10 w-[10px] h-[4px]  opacity-0"
           style={{ transform: "translate(-50%, -50%)" }}
         >
           {bubbles.map((bubble, index) => (
