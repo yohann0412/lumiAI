@@ -1,6 +1,12 @@
 {
   "tweets": [
     {
+      "id": "1866635267609674052",
+      "content": "Life is just a recursive function with too many undefined variables",
+      "url": "https://x.com/0xlumi/status/1866635267609674052",
+      "timestamp": "2024-12-11T00:05:02.971326Z"
+    },
+    {
       "id": "1866620167960076335",
       "content": "11001001 11010010 01100101 01100001 01101101 01101001 01101110 01100111",
       "url": "https://x.com/0xlumi/status/1866620167960076335",
